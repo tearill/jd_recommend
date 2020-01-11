@@ -1,0 +1,26 @@
+<!--index.wxml-->
+<view wx:for="{{goods}}" wx:for-item="item" class="{{index == 0 ? 'contains' : 'contain'}}">
+    <view class="media-box__hd">
+        <!-- 商品图片 -->
+        <image class="media-box__thumb" src="{{item.thumb}}"></image>
+    </view>
+    <view class="media-box__bd">
+        <!-- 商品标题 -->
+        <view class="media-box__title">{{item.title}}</view>
+        <!-- <view class="media-box__desc"> -->
+            <!-- 价格描述 -->
+            <view class="media-box__price">{{item.price}}</view>
+        <!-- </view>  -->
+        <!-- 推荐时间 -->
+        <!-- 右下角评论和推荐指数 -->
+        <view class="media-box__sc">
+            <view class="media-box__time">{{item.time}}</view>
+            <view class="media-box__des">
+                <image class="comment_image" src="../../assets/icons/comment.png"></image>
+                <text class="comment_text">{{item.comment}}</text>
+                <image class="value_image" src="../../assets/icons/value.png"></image>
+                <text class="value_text">{{item.value}}</text>
+            </view> 
+        </view>
+    </view>
+</view>
