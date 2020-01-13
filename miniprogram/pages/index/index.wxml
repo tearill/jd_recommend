@@ -1,5 +1,5 @@
 <!--index.wxml-->
-<view wx:for="{{goods}}" wx:for-item="item" wx:key="goods" class="{{index == 0 ? 'contains' : 'contain'}}">
+<view wx:for="{{goods}}" wx:for-item="item" wx:key="goods" class="{{index == 0 ? 'contains' : 'contain'}}" data-id="{{item._id}}" bindtap="showDetail">
     <view class="media-box__hd">
         <!-- 商品图片 -->
         <image class="media-box__thumb" src="{{item.thumb}}"></image>
