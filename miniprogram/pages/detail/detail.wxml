@@ -9,7 +9,7 @@
         <view class="media-box__sc">{{item.time}} | 爆料人:{{item.contributor}}</view>
         <view class="media-box__title">{{item.title}}</view>
         <view class="media-box__price">{{item.price}}</view>
-        <!-- 分隔线 巧用色实现 -->
+        <!-- 分隔线 巧用色实现 --> 
         <view class="media-box__line"></view>
         <view class="media-box__emphasis">{{item.emphasis}}</view>
         <text class="media-box__detail">{{item.content}}</text>
