@@ -18,7 +18,6 @@ Page({
                 goods: res.data
             })
             console.log(res.data);
-
         })
         wx.request({
             url: 'http://localhost:1314/explorePage',
@@ -31,7 +30,14 @@ Page({
                 })
             }
         })
-
+    },
+    onPullDownRefresh() {
+        console.log('onPullDownRefresh');
+        wx.showToast({
+            title: '刷新完成',
+            icon: 'success',
+            duration: 2000
+        })
     },
     onReachBottom() {
         console.log('触底了') 
@@ -89,5 +95,19 @@ Page({
                 }
             }) 
         }
+    },
+    showDetail(e) {
+        const id = e.currentTarget.dataset.id;
+        console.log(id);
+        // console.log(this.data.goods[0]);
+        wx.navigateTo({
+            url: "../detail/detail?id=" + id,
+            fail: function() {
+                console.log("detail跳转失败");
+            },
+            success: function(res) {
+                console.log("detail跳转成功");
+            }
+        })
     }
 })
