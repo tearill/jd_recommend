@@ -1,0 +1,23 @@
+/* miniprogram/pages/commentDetail/commentDetail.wxss */
+
+@import '../goodsDetail/goodsDetail.wxss';
+page {
+    background-color: #fff;
+}
+
+.comment-flag {
+    position: absolute;
+    right: 120rpx;
+}
+
+.comment {
+    border-bottom: 1px solid #EEEEEE;
+}
+
+.no-more-comment {
+    text-align: center;
+    color: #C8C8C8;
+    font-size: 28rpx;
+    padding-top: 20rpx;
+    padding-bottom: 20rpx;
+}

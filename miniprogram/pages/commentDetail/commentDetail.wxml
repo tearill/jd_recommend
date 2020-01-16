@@ -1,0 +1,13 @@
+<!-- miniprogram/pages/commentDetail/commentDetail.wxml -->
+<view class="comment" wx:for="{{comments}}" wx:for-item="comment" wx:key="comment">
+    <view class="avatar">
+        <image class="comment-avatar" src="{{comment.avatar}}" />
+    </view>
+    <view class="comment-desc">
+        <view class="comment-name">{{comment.name}}</view>
+        <view class="comment-flag">{{comment.flag}}</view>
+        <view class="comment-time">{{comment.time}}</view>
+        <view class="comment-content">{{comment.content}}</view>
+    </view>
+</view>
+<view class="no-more-comment">没有更多评论</view>
