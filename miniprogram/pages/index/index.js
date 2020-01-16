@@ -32,12 +32,12 @@ Page({
         console.log(id);
         // console.log(this.data.goods[0]);
         wx.navigateTo({
-            url: "../detail/detail?id=" + id,
+            url: "../goodsDetail/goodsDetail?id=" + id,
             fail: function() {
-                console.log("detail跳转失败");
+                console.log("goodsDetail跳转失败");
             },
             success: function(res) {
-                console.log("detail跳转成功");
+                console.log("goodsDetail跳转成功");
             }
         })
     }
