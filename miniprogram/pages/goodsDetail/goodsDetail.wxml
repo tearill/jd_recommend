@@ -1,0 +1,41 @@
+<!-- miniprogram/pages/detail/detail.wxml -->
+<!-- <text>miniprogram/pages/detail/detail.wxml</text> -->
+<view class="contain" wx:for="{{goods}}" wx:for-item="item" wx:key="goods">
+    <view class="media-box__hd">
+        <image class="media-box__thumb" src="{{item.thumb}}" />
+    </view>
+    <view class="media-box__bd">
+        <!-- 时间与推荐人 -->
+        <view class="media-box__sc">{{item.time}} | 爆料人:{{item.contributor}}</view>
+        <view class="media-box__title">{{item.title}}</view>
+        <view class="media-box__price">{{item.price}}</view>
+        <!-- 分隔线 巧用色实现 -->
+        <view class="media-box__line"></view>
+        <view class="media-box__emphasis">{{item.emphasis}}</view>
+        <text class="media-box__detail">{{item.content}}</text>
+        <view wx:if="{{item.comment != '0'}}" class="media-box-comment">
+            <text class="comment_text">热门评论</text>
+            <view class="comment" wx:for="{{comments}}" wx:for-item="comment" wx:key="comment">
+                <view class="avatar">
+                    <image class="comment-avatar" src="{{comment.avatar}}" />
+                </view>
+                <view class="comment-desc">
+                    <view class="comment-name">
+                        {{comment.name}}
+                        <text class="comment-flag">TOP{{comment.flag}}</text>
+                    </view>
+                    <view class="comment-time">{{comment.time}}</view>
+                    <view class="comment-content">{{comment.content}}</view>
+                </view>
+            </view>
+            <view class="all_comment" bindtap="showComment">
+                查看全部{{comments_num}}条评论
+                <image class="all_icon" src="../../assets/icons/detail.png" />
+            </view>
+        </view>
+        <!-- <button class="head-to-jd" size="large">前往京东</button> -->
+    </view>
+</view>
+<view class="media-box__btn">
+    <text class="head-to-jd">前往京东</text>
+</view>
