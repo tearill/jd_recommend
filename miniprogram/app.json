@@ -15,7 +15,7 @@
     "pages/openapi/callback/callback",
     "pages/openapi/cloudid/cloudid",
     "pages/im/im",
-    "pages/im/room/room",
+    "pages/im/room/room", 
     "pages/goodsDetail/goodsDetail",
     "pages/commentDetail/commentDetail"
   ],
