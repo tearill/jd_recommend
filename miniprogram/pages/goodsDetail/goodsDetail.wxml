@@ -11,30 +11,30 @@
         <view class="media-box__price">{{item.price}}</view>
         <!-- 分隔线 巧用色实现 -->
         <view class="media-box__line"></view>
-        <view class="media-box__emphasis">{{item.emphasis}}</view>
+        <view wx:if="{{item.emphasis != ''}}" class="media-box__emphasis">{{item.emphasis}}</view>
         <text class="media-box__detail">{{item.content}}</text>
-        <view wx:if="{{item.comment != '0'}}" class="media-box-comment">
-            <text class="comment_text">热门评论</text>
-            <view class="comment" wx:for="{{comments}}" wx:for-item="comment" wx:key="comment">
-                <view class="avatar">
-                    <image class="comment-avatar" src="{{comment.avatar}}" />
-                </view>
-                <view class="comment-desc">
-                    <view class="comment-name">
-                        {{comment.name}}
-                        <text class="comment-flag">TOP{{comment.flag}}</text>
-                    </view>
-                    <view class="comment-time">{{comment.time}}</view>
-                    <view class="comment-content">{{comment.content}}</view>
-                </view>
+    </view>
+    <view wx:if="{{item.comment != '0'}}" class="media-box-comment">
+        <view class="comment_text">热门评论</view>
+        <view class="comment" wx:for="{{comments}}" wx:for-item="comment" wx:key="comment">
+            <view class="avatar">
+                <image class="comment-avatar" src="{{comment.avatar}}" />
             </view>
-            <view class="all_comment" bindtap="showComment">
-                查看全部{{comments_num}}条评论
-                <image class="all_icon" src="../../assets/icons/detail.png" />
+            <view class="comment-desc">
+                <view class="comment-name">
+                    {{comment.name}}
+                    <text class="comment-flag">TOP{{comment.flag}}</text>
+                </view>
+                <view class="comment-time">{{comment.time}}</view>
+                <view class="comment-content">{{comment.content}}</view>
             </view>
         </view>
-        <!-- <button class="head-to-jd" size="large">前往京东</button> -->
+        <view class="all_comment" bindtap="showComment">
+            查看全部{{comments_num}}条评论
+            <image class="all_icon" src="../../assets/icons/detail.png" />
+        </view>
     </view>
+    <view wx:if="{{item.comment === '0'}}" class="no-comment"></view>
 </view>
 <view class="media-box__btn">
     <text class="head-to-jd">前往京东</text>

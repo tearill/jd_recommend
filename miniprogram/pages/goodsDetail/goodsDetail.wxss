@@ -32,7 +32,9 @@ page {
     /* width: 100%; */
     padding-left: 30rpx;
     padding-right: 30rpx;
+    
     background-color: #fff;
+    /* padding-bottom: 50rpx; */
     /* margin-top: 60rprx; */
 }
 
@@ -68,12 +70,16 @@ page {
     font-size: 32rpx;
     line-height: 2;
     padding-right: 30rpx;
+    height: 100%;
     /* margin-bottom: 2px; */
+}
+
+.no-comment {
+    padding-bottom: 100rpx;
 }
 
 .media-box-comment {
     margin-bottom: 50px;
-    margin-left: -30rpx;
     padding-right: 0;
     padding-top: 50rpx;
     padding-bottom: 4rpx;
