@@ -1,2 +1,48 @@
-<!--miniprogram/pages/user/user.wxml-->
-<text>miniprogram/pages/user/user.wxml</text>
+<!-- miniprogram/pages/user/user.wxml -->
+<view class="head">
+    <view class="avatar-wrapper">
+        <image class="avatar" src="../../assets/icons/not-log.png" />
+    </view>
+    <view class="login-sign">登录/注册</view>
+    <image class="to-log" src="../../assets/icons/detail-white.png" />
+</view>
+<view class="options">
+    <view class="wrapper">
+        <image class="icons" src="../../assets/icons/wait-to-pay.png" />
+        <view class="text">待付款</view>
+    </view>
+    <view class="wrapper">
+        <image class="icons" src="../../assets/icons/wait-to-receive.png" />
+        <view class="text">待收货</view>
+    </view>
+    <view class="wrapper">
+        <image class="icons" src="../../assets/icons/done.png" />
+        <view class="text">已完成</view>
+    </view>
+    <view class="wrapper">
+        <image class="icons sell-service" src="../../assets/icons/service.png" />
+        <view class="text">返修/售后</view>
+    </view>
+    <view class="myorders">
+        <image class="icons order" src="../../assets/icons/myorders.png" />
+        <view class="text">我的订单</view>
+    </view>
+</view>
+<view class="functions">
+    <view class="fc-items" bindtap="showAppointment">
+        我的预约
+        <image class="all_icon" src="../../assets/icons/detail.png" />
+    </view>
+    <view class="fc-items" bindtap="showDiscount">
+        我的优惠券
+        <image class="all_icon" src="../../assets/icons/detail.png" />
+    </view>
+    <view class="fc-items" bindtap="showFeedback">
+        反馈
+        <image class="all_icon" src="../../assets/icons/detail.png" />
+    </view>
+    <view class="fc-items" bindtap="showAbout">
+        关于
+        <image class="all_icon" src="../../assets/icons/detail.png" />
+    </view>
+</view>
