@@ -1,0 +1,83 @@
+/* miniprogram/pages/feedback/feedback.wxss */
+page {
+    margin: 0;
+    background-color: #EFEFF4;
+}
+
+.title {
+    padding-bottom: 40rpx;
+    margin-bottom: 10rpx;
+    padding-left: 30rpx;
+    background-color: #ffffff;
+    font-size: 32rpx;
+}
+
+.contain {
+    background-color: #ffffff;
+    padding-left: 30rpx;
+    padding-right: 30rpx;
+    padding-bottom: 100rpx;
+    font-size: 32rpx;
+    color: #A1A1A1;
+}
+
+.fb_title {
+    padding-top: 20rpx;
+    padding-bottom: 40rpx;
+}
+
+.type_wrapper {
+    padding-bottom: 40rpx;
+    display: flex;
+}
+
+.type_picker {
+    color: #000;
+    display: inline;
+}
+
+.fb_content {
+    padding-bottom: 20rpx;
+}
+
+.section {
+    height: 260rpx;
+    padding-right: 30rpx;
+}
+
+.fb_text {
+    height: 100%;
+    width: 100%;
+    color: #000;
+    padding-top: 20rpx;
+    padding-left: 20rpx;
+    padding-right: 20rpx;
+    padding-bottom: 20rpx;
+    overflow: scroll;
+    background-color: #EFEFF4;
+    /* margin-right: 30rpx; */
+}
+
+.contact_wrapper {
+    padding-top: 60rpx;
+    display: flex;
+}
+
+.contact {
+    /* display: inline-block; */
+    color: #000;
+    border-bottom: 1px solid #EFEFF4;
+}
+
+.submit {
+    margin-left: 30rpx;
+    margin-top: 70rpx;
+    background-color: #DF443B;
+    text-align: center;
+    width: 690rpx;
+    height: 40px;
+    line-height: 40px;
+    font-weight: normal;
+    color: #fff;
+    border-radius: 5px;
+}

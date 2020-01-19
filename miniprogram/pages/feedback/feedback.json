@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "vant-picker": "../../components/picker/index"
+  },
+  "navigationBarTitleText": "我的反馈",
+  "navigationBarTextStyle": "black",
+  "navigationBarBackgroundColor": "#ffffff",
+  "enablePullDownRefresh": false
+}
