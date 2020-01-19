@@ -8,6 +8,7 @@
             <picker class="type_picker" mode="selector" value="{{index}}" range="{{type}}" bindchange="changeType">
                 <view class="picker">{{type[index]}}</view>
             </picker>
+            <image class="down" src="../../assets/icons/down.png"></image>
         </view>
         <view class="fb_content">反馈内容：</view>
         <view class="section">

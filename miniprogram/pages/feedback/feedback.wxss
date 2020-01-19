@@ -36,6 +36,12 @@ page {
     display: inline;
 }
 
+.down {
+    width: 32rpx;
+    height: 32rpx;
+    padding-top: 8rpx;
+}
+
 .fb_content {
     padding-bottom: 20rpx;
 }
