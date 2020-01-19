@@ -1,57 +1,32 @@
 // miniprogram/pages/user/user.js
 Page({
-  /**
-   * 页面的初始数据
-   */
   data: {
 
   },
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
+  onLoad(options) {
 
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  showAbout() {
+    wx.navigateTo({
+      url: '../about/about',
+      success: function () {
+        console.log('about跳转成功');
+      },
+      fail: function () {
+        console.log('about跳转失败');
+      }
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  showFeedback() {
+    wx.navigateTo({
+      url: '../feedback/feedback',
+      success: function () {
+        console.log('feedback跳转成功');
+      },
+      fail: function () {
+        console.log('feedback跳转失败');
+      }
+    })
   }
+
 })
