@@ -1,0 +1,10 @@
+/* miniprogram/pages/about/about.wxss */
+page {
+    margin: 0;
+    padding: 0;
+}
+
+.content {
+    margin-left: 30rpx;
+    margin-right: 30rpx;
+}

@@ -1,0 +1,6 @@
+<!-- miniprogram/pages/about/about.wxml -->
+<view class="content">
+    <text class="info">
+        通过值得买京东优选小程序用户可以浏览、筛选当前京东商城最值得买的商品，查看商品购买理由，并完成下单购买支付等所有流程。优选信息来自什么值得买，购买支持配送等体验由京东提供。
+    </text>
+</view>
