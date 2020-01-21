@@ -64,5 +64,15 @@ Page({
         console.log('commentDetail跳转成功');
       }
     })
-  }
+  },
+  // 分享功能
+  onShareAppMessage() {
+    return {
+        title: this.data.title,
+        path: 'pages/goodsDetail/goodsDetail?id=' + this.data.id,
+        success: function() {
+            console.log('分享成功')
+        }
+    }
+}
 })
