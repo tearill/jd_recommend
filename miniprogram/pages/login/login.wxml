@@ -1,0 +1,6 @@
+<!-- miniprogram/pages/login/login.wxml -->
+<view class="contain">
+    <image class="logo" src="../../assets/images/jd.png" />
+</view>
+<button class="login-sign">登录/注册</button>
+<button class="phone-login" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">微信手机号快捷登录</button>

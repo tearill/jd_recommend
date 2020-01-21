@@ -1,0 +1,37 @@
+/* miniprogram/pages/login/login.wxss */
+page {
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+}
+
+.contain {
+    text-align: center;
+}
+
+.logo {
+    margin-top: 150rpx;
+    margin-bottom: 80rpx;
+    width: 420rpx;
+    height: 400rpx;
+}
+
+.phone-login, .login-sign {
+    /* display: block; */
+    font-size: 35rpx;
+    font-weight: normal;
+    color: #fff;
+    border-radius: 100rpx;
+    width: 650rpx;
+    height: 90rpx;
+    line-height: 90rpx;
+    margin-left: 50rpx;
+    margin-right: 50rpx;
+    background-color: #51AA37;
+}
+
+.login-sign {
+    color: #000;
+    background-color: #F2F4F5;
+    margin-bottom: 40rpx;
+}
