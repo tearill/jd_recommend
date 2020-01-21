@@ -1,32 +1,23 @@
 <!-- miniprogram/pages/user/user.wxml -->
-<view class="head">
+<view class="head" bindtap="login">
     <view class="avatar-wrapper">
         <image class="avatar" src="../../assets/icons/not-log.png" />
     </view>
-    <view class="login-sign">登录/注册</view>
-    <image class="to-log" src="../../assets/icons/detail-white.png" />
+    <view class="{{loginFlag === 0 ? 'login-sign' : 'username'}}">{{tag}}</view>
+    <view wx:if="{{loginFlag === 1}}" class="jd-bean-nums">
+        <image class="jd-bean" src="../../assets/icons/jd-bean.png" />
+        <view class="bean">京豆{{bean}}</view>
+    </view>
+    <image wx:if="{{loginFlag === 0}}" class="to-log" src="../../assets/icons/detail-white.png" />
+    <view wx:if="{{loginFlag === 1}}" class="logout" bindtap="logout">退出登录</view>
 </view>
 <view class="options">
-    <view class="wrapper">
-        <image class="icons" src="../../assets/icons/wait-to-pay.png" />
-        <view class="text">待付款</view>
-    </view>
-    <view class="wrapper">
-        <image class="icons" src="../../assets/icons/wait-to-receive.png" />
-        <view class="text">待收货</view>
-    </view>
-    <view class="wrapper">
-        <image class="icons" src="../../assets/icons/done.png" />
-        <view class="text">已完成</view>
-    </view>
-    <view class="wrapper">
-        <image class="icons sell-service" src="../../assets/icons/service.png" />
-        <view class="text">返修/售后</view>
-    </view>
-    <view class="myorders">
-        <image class="icons order" src="../../assets/icons/myorders.png" />
-        <view class="text">我的订单</view>
-    </view>
+    <block wx:for="{{options}}" wx:for-item="option" wx:key="option">
+        <view class="{{option.id === 4 ? 'myorders' : 'wrapper'}}" bindtap="showOptions" data-index="{{option.id}}">
+            <image class="{{option.class}}" src="{{option.icon}}" />
+            <view class="text">{{option.name}}</view>
+        </view>
+    </block>
 </view>
 <view class="functions">
     <view class="fc-items" bindtap="showAppointment">

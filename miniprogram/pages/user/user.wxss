@@ -7,6 +7,7 @@ page {
 }
 
 .head {
+    position: relative;
     width: 100%;
     height: 240rpx;
     display: flex;
@@ -32,11 +33,46 @@ page {
     padding-top: 20rpx;
 }
 
+.jd-bean-nums {
+    display: flex;
+    margin-top: 150rpx;
+    position: absolute;
+    left: 225rpx;
+}
+
+.jd-bean {
+    width: 30rpx;
+    height: 30rpx;
+}
+
+.bean {
+    color: #fff;
+    font-size: 25rpx;
+    padding-left: 15rpx;
+}
+
 .login-sign {
     color: #fff;
     line-height: 240rpx;
     font-size: 32rpx;
     padding-left: 20rpx;
+}
+
+.username {
+    color: #fff;
+    font-size: 32rpx;
+    letter-spacing: 2rpx;
+    padding-left: 20rpx;
+    padding-top: 80rpx;
+}
+
+.logout {
+    /* background-color: green; */
+    color: #EDAFA7;
+    font-size: 28rpx;
+    position: absolute;
+    right: 30rpx;
+    bottom: 30rpx;
 }
 
 .all_icon, .to-log {
