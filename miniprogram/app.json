@@ -15,9 +15,15 @@
     "pages/openapi/callback/callback",
     "pages/openapi/cloudid/cloudid",
     "pages/im/im",
-    "pages/im/room/room", 
+    "pages/im/room/room",
     "pages/goodsDetail/goodsDetail",
-    "pages/commentDetail/commentDetail"
+    "pages/commentDetail/commentDetail",
+    "pages/about/about",
+    "pages/feedback/feedback",
+    "pages/login/login",
+    "pages/appointment/appointment",
+    "pages/account/account",
+    "pages/discount/discount"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
@@ -58,6 +64,5 @@
       }
     ]
   },
-  "sitemapLocation": "sitemap.json",
-  "style": "v2"
+  "sitemapLocation": "sitemap.json"
 }
