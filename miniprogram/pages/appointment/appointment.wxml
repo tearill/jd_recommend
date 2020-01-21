@@ -1,0 +1,5 @@
+<!-- miniprogram/pages/appointment/appointment.wxml -->
+<view class="contain">
+    <image class="logo" src="../../assets/images/nothing.png"></image>
+    <view class="text">当前没有预约商品</view>
+</view>

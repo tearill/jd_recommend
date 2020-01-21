@@ -1,0 +1,26 @@
+/* miniprogram/pages/appointment/appointment.wxss */
+
+page {
+    width: 750rpx;
+    background-color: #EFEFF4;
+}
+
+.contain {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;/*垂直居中*/
+    justify-content: center;/*水平居中*/
+}
+
+.logo {
+    width: 260rpx;
+    height: 160rpx;
+}
+
+.text {
+    color: #C6C6C7;
+    font-size: 32rpx;
+}
