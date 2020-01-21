@@ -1,5 +1,5 @@
 {
-    "explorePage":{
+    "explorePage": {
         "navData": [
             {
                 "id": "0",
@@ -66,6 +66,49 @@
                 "name": "金融旅游"
             }
         ]
+    },
+    "feedbackPage": {
+        "typeData": [
+            "功能意见",
+            "界面意见",
+            "您的新需求",
+            "操作意见",
+            "流量问题",
+            "其他"
+        ]
+    },
+    "userPage": {
+        "optionData": [
+            {
+                "id": 0,
+                "name": "待付款",
+                "icon": "../../assets/icons/wait-to-pay.png",
+                "class": "icons"
+            },
+            {
+                "id": 1,
+                "name": "待收货",
+                "icon": "../../assets/icons/wait-to-receive.png",
+                "class": "icons"
+            },
+            {
+                "id": 2,
+                "name": "已完成",
+                "icon": "../../assets/icons/done.png",
+                "class": "icons"
+            },
+            {
+                "id": 3,
+                "name": "返修/售后",
+                "icon": "../../assets/icons/service.png",
+                "class": "icons sell-service"
+            },
+            {
+                "id": 4,
+                "name": "我的订单",
+                "icon": "../../assets/icons/myorders.png",
+                "class": "icons order"
+            }
+        ]
     }
-    
 }
