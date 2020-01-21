@@ -109,5 +109,15 @@ Page({
                 console.log("goodsDetail跳转成功");
             }
         })
+    },
+    // 分享功能
+    onShareAppMessage() {
+        return {
+            title: '什么值得买京东优选',
+            path: 'pages/explore/explore',
+            success: function() {
+                console.log('分享成功')
+            }
+        }
     }
 })
