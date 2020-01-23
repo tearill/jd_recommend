@@ -23,7 +23,7 @@ page {
   width: 100%rpx;
   box-sizing: content-box;
   /* overflow: hidden; */
-  line-height: 108rpx;
+  line-height: 105rpx;
   background: #ffffff;
   font-size: 15px;
   white-space: nowrap;
@@ -42,8 +42,9 @@ page {
 }
 
 .nav-item.active {
-  border-bottom: 100px solid #DE554F;
+  border-bottom: 3px solid #DE554F;
 }
+
 .content {
   /* border-bottom: 16rpx solid #EEEEEE; */
   position: absolute;
@@ -57,13 +58,16 @@ page {
   /* background-color: #fff; */
   /* background-color: blue; */
 }
+
 .contains {
   margin-top: 14rpx;
 }
+
 .no_goods {
   width: 750rpx;
   height: 1044rpx;
 }
+
 .no_pic {
   width: 100%;
   height: 100%;
