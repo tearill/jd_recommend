@@ -1,0 +1,48 @@
+<!-- miniprogram/pages/discount/discount.wxml -->
+<view class="navigator">
+    <scroll-view scroll-x="true" class="nav" scroll-left="{{navScrollLeft}}" scroll-with-animation="{{true}}">
+        <block wx:for="{{navData}}" wx:for-index="id" wx:for-item="navItem" wx:key="id">
+            <view class="wrap">
+                <view class="nav-item {{currentTab == id?'active':''}}" data-name="{{navItem.name}}" data-current="{{id}}" bindtap="switchNav">
+                    {{navItem.name}}
+                </view>
+            </view>
+        </block>
+    </scroll-view>
+</view>
+<view class="content" wx:for="{{navData}}" wx:for-index="id" wx:for-item="navItem" wx:key="id">
+    <block wx:if="{{currentTab === id}}">
+        <view wx:if="{{ !empty_useless || !empty_usable }}" class="discount" wx:for="{{currData}}" wx:for-item="discount" wx:key="id">
+            <view class="discount__hd">
+                <view class="price">{{discount.price}}</view>
+                <view class="need">满{{discount.need}}可用</view>
+            </view>
+            <view class="discount_bd">
+                <view class="discount_bd_head">
+                    <view class="belong">东券</view>
+                    <view class="name">{{discount.name}}</view>
+                </view>
+                <view class="time">{{discount.time}}</view>
+                <button class="go-to-use" wx:if="{{discount.usable === true}}" bindtap="toUse">
+                    去使用
+                </button>
+            </view>
+        </view>
+        <view class="no_more" wx:if="{{(!empty_usable && currentTab === 0) || (!empty_useless && currentTab === 1)}}" wx:for="{{1}}">
+            <view class="logo_wrapper">
+                <view class="line"></view>
+                <image class="no_more_logo" src="../../assets/images/no_more.png"></image>
+                <view class="line"></view>
+            </view>
+            <view class="no_more_text">没有更多了~</view>
+        </view>
+    </block>
+    <view class="contain" wx:if="{{empty_useless && currentTab === 1}}">
+        <image class="logo" src="../../assets/images/nothing.png"></image>
+        <view class="text">您暂无不可用的优惠券</view>
+    </view>
+    <view class="contain" wx:if="{{empty_usable && currentTab === 0}}">
+        <image class="logo" src="../../assets/images/nothing.png"></image>
+        <view class="text">您暂无可用的优惠券</view>
+    </view>
+</view>
