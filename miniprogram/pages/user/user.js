@@ -36,13 +36,7 @@ Page({
   login() {
     if (this.data.loginFlag === 0) {
       wx.navigateTo({
-        url: '../login/login',
-        success: function () {
-          console.log('login跳转成功');
-        },
-        fail: function () {
-          console.log('login跳转失败');
-        }
+        url: '../login/login?prev=user'
       })
     }
   },
@@ -52,59 +46,48 @@ Page({
       data: 0
     });
     wx.navigateTo({
-      url: '../login/login'
+      url: '../login/login?prev=user'
     })
   },
-  showAbout() {
+  showAbout() { // 跳转关于界面
     wx.navigateTo({
-      url: '../about/about',
-      success: function () {
-        console.log('about跳转成功');
-      },
-      fail: function () {
-        console.log('about跳转失败');
-      }
+      url: '../about/about'
     })
   },
-  showFeedback() {
+  showFeedback() { // 跳转反馈界面
     wx.navigateTo({
-      url: '../feedback/feedback',
-      success: function () {
-        console.log('feedback跳转成功');
-      },
-      fail: function () {
-        console.log('feedback跳转失败');
-      }
+      url: '../feedback/feedback'
     })
   },
-  showAppointment() {
-    wx.navigateTo({
-      url: '../appointment/appointment',
-      success: function () {
-        console.log('appointment跳转成功');
-      },
-      fail: function () {
-        console.log('appointment跳转失败');
-      }
-    })
+  showAppointment() { // 跳转预约界面
+    if (this.data.loginFlag === 0) {
+      wx.navigateTo({
+        url: '../login/login?prev=appointment'
+      })
+    } else {
+      wx.navigateTo({
+        url: '../appointment/appointment'
+      })
+    }
   },
-  showDiscount() {
-    wx.navigateTo({
-      url: '../discount/discount',
-      success: function () {
-        console.log('discount跳转成功');
-      },
-      fail: function () {
-        console.log('discount跳转失败');
-      }
-    })
+  showDiscount() { // 跳转优惠券界面
+    if (this.data.loginFlag === 0) {
+      wx.navigateTo({
+        url: '../login/login?prev=discount'
+      })
+    } else {
+      wx.navigateTo({
+        url: '../discount/discount'
+      })
+    }
+
   },
-  showOptions(e) {
+  showOptions(e) { // 跳转账户选项界面
     const index = e.currentTarget.dataset.index;
     console.log(index);
     if (this.data.loginFlag === 0) {
       wx.navigateTo({
-        url: '../login/login'
+        url: '../login/login?prev=options'
       })
     } else {
       wx.navigateTo({
