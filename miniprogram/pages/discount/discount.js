@@ -1,11 +1,13 @@
 const loginCacheKey = 'Login:Flag';
 Page({
   data: {
-    navData: [],
+    navData: [], // 导航栏数据
     navScrollLeft: 0,
-    currentTab: 0,
-    discount: [],
-    currData: [],
+    currentTab: 0, // 当前导航栏
+    discount: [], // 全部优惠券数据
+    num1: 0, // 可用优惠券数量
+    num2: 0, // 不可用优惠券数量
+    currData: [], // 每个导航栏当前优惠券数据，初始为可用优惠券数据
     empty_usable: false,
     empty_useless: false,
     flag: wx.getStorageSync(loginCacheKey) || 0
@@ -22,10 +24,14 @@ Page({
     wx.request({ // 请求导航栏数据
       url: 'http://localhost:1314/discountPage',
       success: (res) => {
+        // let newNav = res.data.navData;
+        // newNav[0].name = newNav[0].name + '(' + this.data.num1 + ')';
+        // console.log(newNav, 'newNav')
         this.setData({
           navData: res.data.navData
         })
-        console.log(this.data.navData);
+        // console.log(this.data.navData);
+        // console.log(this.data.num, 'num in request')
       }
     });
     wx.request({ // 请求优惠券数据
@@ -35,16 +41,19 @@ Page({
           discount: res.data.discountData
         })
         console.log(this.data.discount);
-      },
-      complete: () => {
         let usableData = []; // 可用优惠券数据
+        let useless = 0;
         this.data.discount.map((val) => { // 优惠券数据分类
           if (val.usable === true) {
             usableData.push(val);
+          } else {
+            useless++;
           }
         });
         this.setData({
-          currData: usableData
+          currData: usableData,
+          num1: usableData.length,
+          num2: useless
         });
         console.log(this.data.currData, '加载时的数据');
         if (this.data.currData.length === 0) {

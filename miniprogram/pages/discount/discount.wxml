@@ -14,18 +14,23 @@
     <block wx:if="{{currentTab === id}}">
         <view wx:if="{{ !empty_useless || !empty_usable }}" class="discount" wx:for="{{currData}}" wx:for-item="discount" wx:key="id">
             <view class="discount__hd">
-                <view class="price">{{discount.price}}</view>
-                <view class="need">满{{discount.need}}可用</view>
+                <view class="price_wrapper">
+                    <view class="symbol">￥</view>
+                    <view class="price">{{discount.price}}</view>
+                </view>
+                <view class="need">满{{discount.need}}元可用</view>
             </view>
             <view class="discount_bd">
                 <view class="discount_bd_head">
                     <view class="belong">东券</view>
                     <view class="name">{{discount.name}}</view>
                 </view>
-                <view class="time">{{discount.time}}</view>
-                <button class="go-to-use" wx:if="{{discount.usable === true}}" bindtap="toUse">
-                    去使用
-                </button>
+                <view class="discount_bd_desc">
+                    <view class="time">{{discount.time}}</view>
+                    <view class="go_to_use" wx:if="{{discount.usable === true}}" bindtap="toUse">
+                        去使用
+                    </view>
+                </view>
             </view>
         </view>
         <view class="no_more" wx:if="{{(!empty_usable && currentTab === 0) || (!empty_useless && currentTab === 1)}}" wx:for="{{1}}">
