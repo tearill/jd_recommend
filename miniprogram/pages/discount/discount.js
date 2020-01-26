@@ -8,8 +8,6 @@ Page({
     num1: 0, // 可用优惠券数量
     num2: 0, // 不可用优惠券数量
     currData: [], // 每个导航栏当前优惠券数据，初始为可用优惠券数据
-    empty_usable: false,
-    empty_useless: false,
     flag: wx.getStorageSync(loginCacheKey) || 0
   },
   onLoad() {
@@ -42,25 +40,27 @@ Page({
         })
         console.log(this.data.discount);
         let usableData = []; // 可用优惠券数据
-        let useless = 0;
-        this.data.discount.map((val) => { // 优惠券数据分类
+        let uselessData = []; // 不可用优惠券数量
+        this.data.discount.map(val => { // 优惠券数据分类
           if (val.usable === true) {
-            usableData.push(val);
+            usableData.push(val)
           } else {
-            useless++;
+            uselessData.push(val)
           }
-        });
+        })
         this.setData({
+          uselessData,
+          usableData,
           currData: usableData,
           num1: usableData.length,
-          num2: useless
-        });
+          num2: uselessData.length
+        })
         console.log(this.data.currData, '加载时的数据');
-        if (this.data.currData.length === 0) {
-          this.setData({
-            empty_usable: true
-          })
-        }
+        // if (this.data.currData.length === 0) {
+        //   this.setData({
+        //     empty_usable: true
+        //   })
+        // }
       }
     });
   },
@@ -70,46 +70,13 @@ Page({
     this.setData({
       currentTab: cur
     });
-    let usableData = []; // 可用优惠券数据
-    let uselessData = []; // 不可用优惠券数据
-    this.data.discount.map((val) => { // 优惠券数据分类
-      if (val.usable === true) {
-        usableData.push(val);
-      } else {
-        uselessData.push(val);
-      }
-    });
     if (cur === 0) { // 设置可用优惠券
-      console.log(usableData, 'usable');
-      if (usableData.length === 0) { // 可用优惠券为空
-        this.setData({
-          empty_usable: true,
-          empty_useless: false
-        })
-      } else { // 可用优惠券不为空
-        this.setData({
-          empty_usable: false,
-          empty_useless: true
-        })
-      }
       this.setData({
-        currData: usableData
+        currData: this.data.usableData
       })
     } else { // 设置不可用优惠券
-      console.log(uselessData, 'useless');
-      if (uselessData.length === 0) { // 可用优惠券为空
-        this.setData({
-          empty_useless: true,
-          empty_usable: false
-        })
-      } else { // 可用优惠券不为空
-        this.setData({
-          empty_useless: false,
-          empty_usable: true
-        })
-      }
       this.setData({
-        currData: uselessData
+        currData: this.data.uselessData
       })
     }
   },
