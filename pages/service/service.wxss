@@ -1,0 +1,129 @@
+/* miniprogram/pages/service/service.wxss */
+
+@import "../discount/discount.wxss";
+page {
+    background-color: #EFEFF4;
+}
+
+.navigator {
+    height: 100rpx;
+    margin-bottom: 1px;
+    border-top: none;
+}
+
+.wrap {
+    width: 25%;
+    /* background-color: green; */
+}
+
+.nav {
+    line-height: 100rpx;
+    padding-left: 50rpx;
+    padding-right: 50rpx;
+}
+
+.nav-item {
+    margin-left: 20rpx;
+    margin-right: 20rpx;
+    text-align: center;
+    font-size: 30rpx;
+}
+
+.nav-item.active {
+    font-weight: bold;
+    color: #000;
+    font-size: 32rpx;
+    border-bottom: 3px solid #DE554F;
+}
+
+.search_box {
+    position: absolute;
+    top: 101rpx;
+    width: 100%;
+    z-index: 99;
+}
+
+.search {
+    height: 120rpx;
+    width: 750rpx;
+    padding-left: 30rpx;
+    padding-top: 20rpx;
+    background-color: #fff;
+    /* background-color: red; */
+    position: relative;
+    display: flex;
+    flex: 1;
+    box-sizing: border-box;
+}
+
+input {
+    width: 593rpx;
+    height: 80rpx;
+    font-size: 25rpx;
+    border-radius: 50rpx;
+    background-color: #F5F5F5;
+    box-sizing: border-box;
+    padding-left: 60rpx;
+    padding-right: 60rpx;
+}
+
+.icon {
+    position: absolute;
+    top: 45rpx;
+    left: 45rpx;
+    background-size: 100%;
+    width: 30rpx;
+    height: 30rpx;
+    /* margin-right: 10rpx; */
+}
+
+.delete {
+    width: 40rpx;
+    height: 40rpx;
+    position: absolute;
+    left: 570rpx;
+    top: 40rpx;
+    /* image被文本框遮挡无法触发点击事件 */
+    z-index: 990;
+}
+
+.cancel {
+    font-size: 25rpx;
+    color: #BCBCBC;
+    position: absolute;
+    top: 35%;
+    right: 70rpx;
+}
+
+.select {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    /* justify-content: center; */
+    position: absolute;
+    right: 60rpx;
+    top: 20rpx;
+    /* padding-left: 20rpx; */
+}
+
+.select_icon {
+    width: 40rpx;
+    height: 40rpx;
+}
+
+.select_text {
+    font-size: 20rpx;
+    color: #BCBCBC;
+}
+
+.content {
+    position: absolute;
+    top: 221rpx;
+    height: 100%;
+}
+
+.text {
+    padding-left: 30rpx;
+    padding-right: 30rpx;
+    text-align: center;
+}
