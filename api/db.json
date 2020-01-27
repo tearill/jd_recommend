@@ -1,4 +1,142 @@
 {
+    "goodsPage": {
+        "goods": [
+            {
+                "_id": "871c176d-4d4e-418c-b22b-1a67cbd12e00",
+                "category": "1",
+                "comment": "0",
+                "content": "京东自营目前售价9.9元，两件五折,叠加169-30优惠券，合理凑单，可优惠至3.28元/件， 好价可入。  选用野生香菇，四川的天然地理环境，造就了美味的野香菌,不仅用于佐餐，还可拌面、夹馒头，烹制其他菜品，使用方法多种多样，规格: 158g。",
+                "contributor": "bbsdy",
+                "emphasis": "四川味道~",
+                "price": "45元包邮",
+                "thumb": "http://img13.360buyimg.com/n7/jfs/t1/52310/6/6587/101493/5d449a88E31dfa6c8/48203f35cbf29f8a.jpg",
+                "time": "17:53",
+                "title": "义居阁 多功能九孔魔术衣架 6个",
+                "value": "100%"
+            },
+            {
+                "_id": "ac20e249-0c99-4bd2-ba61-2a2c45adc022",
+                "category": "2",
+                "comment": "6",
+                "content": "京东目前售价39.9元，参加3件7折促销活动，叠加229-40元优惠券，6件实付127.58元包邮，合21.26元/件。 近期好价,感兴趣的值友可以入手。  G7和威拿都是越南产咖啡中的佼佼者，喝过的人评价都不错，甚至有“喝起来不像速溶咖啡”的评语。G7咖啡由越南的中原咖啡出品，味道香醇，被广大国内用户所喜爱。目前G7咖啡有了正规的代理商，无需担心代购或假货的风险。这款三合一速溶咖啡产地越南，规格: 800g。",
+                "contributor": "值友1233579353",
+                "emphasis": "合21.26元/件。",
+                "price": "149包邮",
+                "thumb": "http://img12.360buyimg.com/n7/jfs/t1/83231/36/7/195633/5cd27f0dE9d8a2006/31bdb41cebe2a309.jpg",
+                "time": "16:12",
+                "title": "裕道府 优选稻种 五常有机稻花香大米 东北大米5kg",
+                "value": "50%"
+            },
+            {
+                "_id": "612b1344-4540-4d07-aab1-a4627464b25b",
+                "category": "7",
+                "comment": "0",
+                "content": "京东目前售价999元，13日 参与每满99-10元活动，使用999-300元优惠券，叠加90元店铺券，到手价509元， 喜欢可入~  黑冰F8531男士羽绒服，填充物95%灰鹅绒，充绒量115克(M号)，蓬度800+, 采用德国亚曼防绒线，GRAMARTO克轻10D防水面料，Telfon防泼水剂处理的羽绒，防水抗湿性更加。",
+                "contributor": "值友1256546523",
+                "emphasis": "95%含绒量，鹅绒填充~",
+                "price": "138元包邮（需用券）",
+                "thumb": "https://img10.360buyimg.com/mobilecms/s500x500_jfs/t1/103505/10/6995/179710/5df75c25Ef90d72f4/fe6a9ef1f3dce18d.jpg",
+                "time": "17:50",
+                "title": "鳄鱼恤 CROCODILE 棉服男2019冬季韩版潮流款青年百搭休闲潮牌连帽棉衣男保暖外套男mx6869 灰蓝 XL",
+                "value": "100%"
+            },
+            {
+                "_id": "bef028b4-01cd-4c3c-b527-cb96c5159698",
+                "category": "8",
+                "comment": "1",
+                "content": "京东特价至297元包邮到手，感兴趣的值友们可关注下~ 36码蓝色款，也是好价:  ASICS亚瑟士GT-2000 7跑鞋，鞋楦升级，前掌更圆设计,脚趾部位高度增加，增强了舒适性。工程学流线型网布鞋面在需要的区域提供了弹性及透气性。中底下层升级为FlyteFoamLyte材料，搭载TRUSSTIC以及内侧双密度支撑系统，稳定保护。",
+                "contributor": "小值机器人",
+                "emphasis": "稳定保护~",
+                "price": "158元包邮",
+                "thumb": "https://img11.360buyimg.com/jdcms/s300x300_jfs/t1/39964/33/2067/175431/5cbf35c4E3c2fb560/fdf724983cd3a512.jpg.webp",
+                "time": "14:40",
+                "title": "休闲鞋女2019秋冬季新品女鞋单鞋平底内增高运动鞋",
+                "value": "100%"
+            },
+            {
+                "_id": "2ecaf8de-65ce-49c9-8eee-38e91be8b936",
+                "category": "1",
+                "comment": "3",
+                "content": "京东目前拼购价11.9元，可领取6元优惠券(PC端/APP端)，实付5.9元包邮到手。近期好价，有需要的值友快快入手吧~  这款按摩器为HAGGIS出品，以八爪鱼为设计灵感，选用全不锈钢丝+圆木材质，共12个头，把按摩爪罩在头部，上下提拉，或者左右轻轻摇晃，使用者能产生强烈舒适感，并对头部能起到按摩作用，体验颅内高潮。",
+                "contributor": "燕歌行23",
+                "emphasis": "按摩头皮，舒缓心情~",
+                "price": "35.90（需用券）",
+                "thumb": "https://img14.360buyimg.com/jdcms/s300x300_jfs/t1/20093/11/10012/159085/5c832f78Eb6bfe66d/6882149ce5901763.jpg.webp",
+                "time": "15:59",
+                "title": "茶花 晾衣架夹子晾衣夹内衣晾袜子架晒衣架(24夹子) 0709",
+                "value": "0"
+            },
+            {
+                "_id": "6b599e15-3f33-40d3-be9e-7c6d2ebbab19",
+                "category": "2",
+                "comment": "5",
+                "content": "牛尾汤，香喷喷!牛尾(两款可选，库存不同) /上脑牛肉块组合，低至43.75元/份，需使用运费券(可重复领，- -定记得多领几张)，按照领到的券确定购买份数!首页苏宁生鲜盐池滩羊羔羊肉卷、牛腩块、京东牛尾组合、FIRST CUT澳洲原包牛腱子(目前牛腱配牛肋条仍可实现优惠)、历史次低的礼盒装手工冬酿花雕、自营海鲜礼券、尚选S级澳洲肥牛卷、羊肉卷组合，也可按需选择!如康新西兰牛尾500g装(此款库存较为局限)、澳洲精选精修牛尾500g装(此款大部分地区有货) 。       祁连牧歌安格斯上脑牛肉块800g装(广 东、湖北等部分地区补货)，均参加200元4件、150元3件活动(需购物车内修改优惠)，并可使用315-25/185-15签到券 (按照该推荐中的方法领取，连续两天签到即可，可重复领)，领到315-25券的话，可“任组4件”，购物车内修改优惠至200元4件，券后实付175元包邮，折合43.75元/件， 牛尾8.8折于近期首页推荐，上脑牛肉块27.3元/斤，9折于近期首页推荐，而且品质好不少;领到185- 15券的话，可“任组3件”， 购物车内修改优惠至150元3件，券后实付135元包邮!  叠加优惠券: 315-25/185-15签到券(内附方法，可重复领,多领几张)。",
+                "contributor": "Horace",
+                "emphasis": "",
+                "price": "59.90",
+                "thumb": "https://img11.360buyimg.com/jdcms/s300x300_jfs/t1/88792/31/7229/212020/5df9a7dfEd19bb76b/21dc69298abe8086.jpg.webp",
+                "time": "17:20",
+                "title": "嗨吃家酸辣粉110g*12桶整箱方便速食",
+                "value": "100%"
+            }
+        ],
+        "comments": [
+            {
+                "_id": "c7b40757-b3bb-49ec-b04b-eb1a43d147e2",
+                "avatar": "https://storage.360buyimg.com/i.imageUpload/776477576e455644686844596b7231353639343730323736383639_sma.jpg",
+                "content": "配我9.9包邮的原道怎么样？",
+                "flag": 1,
+                "goods": "裕道府 优选稻种 五常有机稻花香大米 东北大米5kg",
+                "name": "Cheree",
+                "time": "15:02"
+            },
+            {
+                "_id": "ac590feb-ab83-455c-ad49-fcecf4c492f7",
+                "avatar": "https://storage.360buyimg.com/i.imageUpload/6d69616f657234323431353733343338393336383738_sma.jpg",
+                "content": "自营里的不也多的是",
+                "flag": 2,
+                "goods": "裕道府 优选稻种 五常有机稻花香大米 东北大米5kg",
+                "name": "yangyang01",
+                "time": "15:39"
+            },
+            {
+                "_id": "9f8ddfd2-143e-4547-a5b4-80d8d11723f4",
+                "avatar": "https://storage.360buyimg.com/i.imageUpload/61656f6e5f3230303831333839383534333437343836_sma.jpg",
+                "content": "不打折19元两件买过",
+                "flag": 3,
+                "goods": "裕道府 优选稻种 五常有机稻花香大米 东北大米5kg",
+                "name": "柒柒零零",
+                "time": "16:11"
+            },
+            {
+                "_id": "8e46e929-3990-46b6-81fa-8a82a610ecaf",
+                "avatar": "https://storage.360buyimg.com/i.imageUpload/6d656e6733343232363831353431323033393632333631_sma.jpg",
+                "content": "胡说，分明是六块多",
+                "flag": 4,
+                "goods": "裕道府 优选稻种 五常有机稻花香大米 东北大米5kg",
+                "name": "当你悲伤时",
+                "time": "17:05"
+            },
+            {
+                "_id": "4102fb6b-de21-4e9c-9b9b-aa4ab67de900",
+                "avatar": "https://storage.360buyimg.com/i.imageUpload/736c71796d647831343338353731333731343235_sma.jpg",
+                "content": "我直接下单怎么怕574？",
+                "flag": 5,
+                "goods": "裕道府 优选稻种 五常有机稻花香大米 东北大米5kg",
+                "name": "必行必拓",
+                "time": "17:30"
+            },
+            {
+                "_id": "0b7a698e-e1c6-4ae2-864f-5fbe8437b096",
+                "avatar": "https://storage.360buyimg.com/i.imageUpload/6a645f3763333138623232356435633231353434313438323930383731_sma.jpg",
+                "content": "第三方，还是让了，等自营或者旗舰店",
+                "flag": 6,
+                "goods": "裕道府 优选稻种 五常有机稻花香大米 东北大米5kg",
+                "name": "aisi",
+                "time": "18:02"
+            }
+        ]
+    },
     "explorePage": {
         "navData": [
             {
@@ -109,6 +247,130 @@
                 "icon": "../../assets/icons/myorders.png",
                 "class": "icons order"
             }
+        ]
+    },
+    "discountPage": {
+        "navData": [
+            {
+                "id": 0,
+                "name": "可用优惠券"
+            },
+            {
+                "id": 1,
+                "name": "不可用优惠券"
+            }
+        ],
+        "discountData": [
+            {
+                "id": 0,
+                "name": "全品类(特例商品除外)",
+                "time": "2020.01.08-2020.02.05",
+                "price": 8,
+                "need": 25,
+                "usable": true
+            },
+            {
+                "id": 1,
+                "name": "电子类",
+                "time": "2020.01.08-2020.02.05",
+                "price": 8,
+                "need": 25,
+                "usable": true
+            }
+        ]
+    },
+    "accountPage": {
+        "navData": [
+            {
+                "id": 0,
+                "name": "全部"
+            },
+            {
+                "id": 1,
+                "name": "待付款"
+            },
+            {
+                "id": 2,
+                "name": "待收货"
+            },
+            {
+                "id": 3,
+                "name": "已完成"
+            }
+        ],
+        "orderData": [
+            {
+                "id": 0,
+                "avatar": "https://img10.360buyimg.com/N6/s60x60_jfs/t1/97503/8/11107/135945/5e2c15fdE66786979/7f3b266b07ae51e6.jpg",
+                "store": "圣峰轩医疗器械专营店",
+                "title": "口罩一次性防护无菌防病菌护理外科防尘薄款透气独立包装50片/盒 蓝色口罩(50片/盒)",
+                "actual_pay": "￥68.00",
+                "child_order": [],
+                "pay": false,
+                "receive": false,
+                "cancel": false,
+                "status": ""
+            },
+            {
+                "id": 1,
+                "avatar": "https://img10.360buyimg.com/N6/s60x60_jfs/t1/71330/20/2069/326283/5d07549fE6f5b9ee0/2dea39187fa2fad6.png",
+                "store": "淘金手机专营店",
+                "title": "Apple 【国行正品】 苹果iPhone XR 手机 黑色 128GB",
+                "child_order": [
+                    {
+                        "avatar": "https://img10.360buyimg.com/N6/s60x60_jfs/t1/4149/24/1299/565158/5b93a7efEba92dabf/910b85ab6b59079d.png",
+                        "title": "钢化膜防爆贴膜 (礼品仅展示以实物为准) 钢化膜"
+                    },
+                    {
+                        "avatar": "https://img10.360buyimg.com/N6/s60x60_jfs/t23959/208/859328651/212957/d13a6c2e/5b44a632N6d24cd7b.png",
+                        "title": "透明保护壳 (礼品图片仅供参考，以收到实物为准)"
+                    }
+                ],
+                "actual_pay": "￥4788.00",
+                "pay": false,
+                "receive": false,
+                "cancel": true,
+                "status": ""
+            },
+            {
+                "id": 2,
+                "avatar": "https://img10.360buyimg.com/N6/s60x60_jfs/t1/1695/39/3482/70556/5b997bf7Ed2d65519/749d8efdff062fb0.jpg",
+                "store": "京东",
+                "title": "Apple iPhone XR (A2108) 128G 白色 移动联通电信4G手机 双卡双待",
+                "child_order": [
+                    {
+                        "avatar": "https://img10.360buyimg.com/N6/s60x60_jfs/t1/94145/5/7884/102552/5e008b51E0634a5ca/7bb3c8df4a076aec.jpg",
+                        "title": "【免费体验】 Apple产品\"上手无忧\"服务"
+                    }
+                ],
+                "actual_pay": "￥4999.00",
+                "pay": false,
+                "receive": false,
+                "cancel": true,
+                "status": ""
+            }
+        ]
+    },
+    "servicePage": {
+        "navData": [
+            {
+                "id": 0,
+                "name": "售后处理"
+            },
+            {
+                "id": 1,
+                "name": "处理中"
+            },
+            {
+                "id": 2,
+                "name": "售后评价"
+            },
+            {
+                "id": 3,
+                "name": "申请记录"
+            }
+            
+            
         ]
     }
 }
