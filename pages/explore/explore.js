@@ -1,6 +1,5 @@
 // miniprogram/pages/explore/explore.js
-// const db = wx.cloud.database();
-// const goodsCollection = db.collection('goods');
+import util from '../../utils/util.js'
 Page({
     data: {
         goods: [], // 所有商品
@@ -11,35 +10,33 @@ Page({
     },
     onLoad() {
         console.log('onLoad');
-        // goodsCollection
-        // .get()
-        // .then(res => {
-        //     this.setData({
-        //         goods: res.data
-        //     })
-        //     console.log(res.data);
+        // wx.request({
+        //     url: 'http://localhost:1314/goodsPage',
+        //     success: res => {
+        //         console.log(res)
+        //         this.setData({
+        //             goods: res.data.goods,
+        //             currData: res.data.goods
+        //         })
+        //     }
         // })
-        wx.request({
-            url: 'http://localhost:1314/goodsPage',
-            success: res => {
-                console.log(res)
+        util.request('http://localhost:1314/goodsPage')
+            .then(res => {
                 this.setData({
                     goods: res.data.goods,
                     currData: res.data.goods
                 })
-            }
-        })
-        wx.request({
-            url: 'http://localhost:1314/explorePage',
-            success: (res) => {
-                console.log(res);
+            })
+        util.request('http://localhost:1314/explorePage')
+            .then(res => {
                 const navData = res.data.navData;
                 console.log(navData);
                 this.setData({
                     navData
                 })
-            }
-        })
+            })
+
+
     },
     onPullDownRefresh() {
         console.log('onPullDownRefresh');
@@ -62,14 +59,6 @@ Page({
         });
         console.log(this.data.category);
         if (cur.toString() === '0') {
-            // goodsCollection
-            // .get()
-            // .then(res => {
-            //     this.setData({
-            //         goods: res.data
-            //     })
-            //     console.log(res.data,'全部数据');
-            // }) 
             this.setData({
                 currData: this.data.goods
             })
@@ -78,26 +67,6 @@ Page({
             var num = this.data.category; // 标记当前分类
             console.log(typeof num, 'num类型');
             let currData = []
-            // goodsCollection
-            // .where({
-            //     category: num.toString()
-            // })
-            // .get()
-            // .then(res => {
-            //     this.setData({
-            //         goods: res.data
-            //     })
-            //     console.log(res.data,'分类数据'); 
-            //     if(this.data.goods.length === 0) {
-            //         this.setData({
-            //             isEmpty: true
-            //         })
-            //     }else {
-            //         this.setData({
-            //             isEmpty: false
-            //         })
-            //     }
-            // }) 
             this.data.goods.map(val => {
                 if (val.category === num.toString()) {
                     currData.push(val)
