@@ -1,3 +1,4 @@
+import util from '../../utils/util.js'
 const loginCacheKey = 'Login:Flag';
 Page({
   data: {
@@ -19,9 +20,8 @@ Page({
         url: '../login/login'
       })
     }
-    wx.request({ // 请求导航栏数据
-      url: 'http://localhost:1314/discountPage',
-      success: (res) => {
+    util.request('http://localhost:1314/discountPage') // 请求导航栏数据
+      .then(res => {
         // let newNav = res.data.navData;
         // newNav[0].name = newNav[0].name + '(' + this.data.num1 + ')';
         // console.log(newNav, 'newNav')
@@ -30,11 +30,9 @@ Page({
         })
         // console.log(this.data.navData);
         // console.log(this.data.num, 'num in request')
-      }
-    });
-    wx.request({ // 请求优惠券数据
-      url: 'http://localhost:1314/discountPage',
-      success: (res) => {
+      })
+    util.request('http://localhost:1314/discountPage') // 请求优惠券数据
+      .then(res => {
         this.setData({
           discount: res.data.discountData
         })
@@ -61,7 +59,6 @@ Page({
         //     empty_usable: true
         //   })
         // }
-      }
     });
   },
   switchNav(e) {
