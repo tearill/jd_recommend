@@ -50,6 +50,7 @@ page {
   padding-right: 44rpx;
   /* background-color: red; */
   box-sizing: border-box;
+  /* 超出两行打点 */
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;

@@ -1,26 +1,18 @@
 //index.js
-// const requestAPI = require('../../utils/util')
+import util from '../../utils/util.js'
 Page({
     data: {
         goods: []
     },
     onLoad() {
         console.log('onLoad');
-        wx.request({
-            url: 'http://localhost:1314/goodsPage',
-            success: res => {
+        util.request('http://localhost:1314/goodsPage')
+            .then(res => {
                 console.log(res)
                 this.setData({
                     goods: res.data.goods
                 })
-            }
-        })
-        // requestAPI.requestPromise('http://localhost:1314/goodsPage')
-        //     .then(res => {
-        //         this.setData({
-        //             goods: res.data.goods
-        //         })
-        //     })
+            })
     },
     onPullDownRefresh() {
         console.log('onPullDownRefresh');
