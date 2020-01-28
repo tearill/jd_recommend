@@ -73,7 +73,11 @@
 .body_title {
     font-size: 28rpx;
     padding-top: 60rpx;
-    padding-left: 30rpx;
+    padding-left: 20rpx;
+    /* 超出两行打点 */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
     overflow: hidden;
 }
 
@@ -100,4 +104,23 @@
     color: #989A9B;
     font-size: 32rpx;
     padding-top: 20rpx;
+}
+
+.goTop {
+    position: fixed;
+    bottom: 130rpx;
+    right: 20rpx;
+    width: 65rpx;
+    height: 65rpx;
+    border: 1px solid #DDDDDD;
+    border-radius: 50%;
+    background-color: #fff;
+    text-align: center;
+}
+
+.icon_goTop {
+    width: 40rpx;
+    height: 40rpx;
+    padding-top: 12rpx;
+    padding-left: 2rpx;
 }
