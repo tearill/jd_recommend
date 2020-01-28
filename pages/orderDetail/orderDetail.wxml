@@ -1,0 +1,102 @@
+<!-- pages/orderDetail/orderDetail.wxml -->
+<block wx:for="{{currData}}" wx:for-item="goods" wx:key="id">
+    <!-- 顶部订单号和订单状态 -->
+    <view class="top">
+        <view class="order_id">
+            <view class="order_text">订单号：</view>
+            <view class="id">{{goods.order_id}}</view>
+        </view>
+        <view class="status">{{goods.status}}</view>
+    </view>
+    <!-- 如果状态是已完成 显示感谢在京东购物 -->
+    <view class="thanks" wx:if="{{goods.status === '完成'}}">
+        <image class="car" src="../../assets/icons/delivery.png"></image>
+        <text class="thanks_text">感谢您在京东购物，欢迎您再次光临！</text>
+        <image class="to_delivery" src="../../assets/icons/detail.png"></image>
+    </view>
+    <!-- 收件人 联系方式 收件地址 -->
+    <view class="address">
+        <!-- 头像 -->
+        <view class="avatar_wrapper">
+            <image class="user_avatar" src="../../assets/icons/user.png"></image>
+        </view>
+        <view class="user_wrapper">
+            <!-- 收件人 -->
+            <view class="address_hd">
+                <view class="name">Horace</view>
+                <view class="phone">139****8837</view>
+            </view>
+            <view class="address_text">江西省南昌市经济技术开发区广兰大道418号东华理工大学</view>
+        </view>
+    </view>
+    <view class="goodsCard">
+        <!-- 订单头部 图标 店铺名 订单状态 -->
+        <view class="head">
+            <image class="store_logo" wx:if="{{goods.store === '京东'}}" src="../../assets/icons/JD.png"></image>
+            <image class="store_logo" wx:else src="../../assets/icons/store.png"></image>
+            <view class="store">{{goods.store}}</view>
+            <view class="contact">
+                <image class="seller_logo" src="../../assets/icons/seller.png"></image>
+                <view class="contact_seller">联系卖家</view>
+            </view>
+        </view>
+        <!-- 订单信息 -->
+        <view class="body">
+            <!-- 商品图片 -->
+            <view class="body_hd">
+                <image class="avatar" src="{{goods.avatar}}"></image>
+            </view>
+            <!-- 商品标题 -->
+            <view class="body_bd">
+                <view class="body_title">{{goods.title}}</view>
+                <view class="price">¥{{goods.total_price}}</view>
+                <view class="num">数量：{{goods.num}}</view>
+            </view>
+        </view>
+        <!-- 同一个订单的其他子订单 -->
+        <view class="body" wx:if="{{goods.child_order != ''}}" wx:for="{{goods.child_order}}" wx:for-item="child" wx:key="id">
+            <view class="body_hd">
+                <image class="avatar" src="{{child.avatar}}"></image>
+            </view>
+            <view class="body_bd">
+                <view class="body_title">{{child.title}}</view>
+                <view class="price">¥{{child.price}}</view>
+                <view class="num">数量：{{child.num}}</view>
+            </view>
+        </view>
+    </view>
+    <view class="desc">
+        <view class="desc_wrapper pay_methods">
+            <view class="describe">支付方式</view>
+            <view class="text">{{goods.pay_methods}}</view>
+        </view>
+        <view class="desc_wrapper">
+            <view class="describe">配送信息</view>
+            <view class="text">{{goods.delivery}}</view>
+        </view>
+        <view class="desc_wrapper">
+            <view class="describe">发票信息</view>
+            <view class="text">{{goods.receipt}}</view>
+        </view>
+        <view class="desc_wrapper last">
+            <view class="describe">商品总额</view>
+            <view class="text">¥{{goods.total_price}}</view>
+        </view>
+        <view class="desc_wrapper fee_wrapper">
+            <view class="describe">+运费</view>
+            <view class="text">¥{{goods.delivery_fee}}</view>
+        </view>
+        <!-- 商品优惠 当有优惠时才显示 -->
+        <view class="desc_wrapper fee_wrapper" wx:if="{{goods.discount != 0}}">
+            <view class="describe">-商品优惠</view>
+            <view class="text">¥{{goods.discount}}</view>
+        </view>
+        <view class="foot">
+            <view class="pay_wrapper">
+                <view class="actual_pay_text">实付款：</view>
+                <view class="actual_pay">¥{{goods.actual_pay}}</view>
+            </view>
+            <view class="order_time">下单时间：{{goods.time}}</view>
+        </view>
+    </view>
+</block>

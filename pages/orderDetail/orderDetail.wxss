@@ -1,0 +1,187 @@
+/* pages/orderDetail/orderDetail.wxss */
+
+@import '../account/account.wxss';
+page {
+    background-color: #F0F2F5;
+    font-size: 32rpx;
+}
+
+.top {
+    background-color: #fff;
+    padding: 20rpx 30rpx 20rpx 30rpx;
+    margin-top: 20rpx;
+    display: flex;
+}
+
+.order_id {
+    display: flex;
+}
+
+.order_text {
+    color: #989A9B;
+    /* font-size: 32rpx; */
+}
+
+.thanks {
+    margin-top: 20rpx;
+    padding: 20rpx 50rpx 20rpx 20rpx;
+    display: flex;
+    height: auto;
+    background-color: #fff;
+    position: relative;
+}
+
+.car {
+    width: 40rpx;
+    height: 40rpx;
+}
+
+.thanks_text {
+    padding-left: 20rpx;
+}
+
+.to_delivery {
+    width: 24rpx;
+    height: 24rpx;
+    position: absolute;
+    right: 30rpx;
+    top: 30rpx;
+}
+
+.address {
+    margin-top: 20rpx;
+    padding: 20rpx 50rpx 20rpx 20rpx;
+    background-color: #fff;
+    display: flex;
+}
+
+.user_avatar {
+    width: 40rpx;
+    height: 40rpx;
+    padding-right: 20rpx;
+    padding-top: 5rpx;
+}
+
+.address_hd {
+    display: flex;
+}
+
+.name {
+    margin-top: -15rpx;
+    margin-right: 30rpx;
+}
+
+.address_text {
+    color: #989A9B;
+    padding-top: 20rpx;
+}
+
+.goodsCard {
+    margin-top: 20rpx;
+    position: relative;
+}
+
+.contact {
+    display: flex;
+    position: absolute;
+    right: 30rpx;
+}
+
+.contact_seller {
+    padding-left: 20rpx;
+}
+
+.seller_logo {
+    width: 40rpx;
+    height: 40rpx;
+}
+
+.body {
+    position: relative;
+}
+
+.avatar {
+    width: 170rpx;
+    height: 170rpx;
+    margin-bottom: 10rpx;
+    margin-top: 10rpx;
+}
+
+.body_title {
+    width: 380rpx;
+    padding-top: 30rpx;
+    /* 超出两行打点 */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+
+.price {
+    position: absolute;
+    right: 30rpx;
+    top: 40rpx;
+    color: #000;
+}
+
+.num {
+    padding-left: 20rpx;
+    padding-top: 20rpx;
+    color: #989A9B;
+}
+
+.desc {
+    margin-top: 20rpx;
+    padding: 20rpx 30rpx 20rpx 30rpx;
+    background-color: #fff;
+    position: relative;
+}
+
+.desc_wrapper {
+    font-size: 30rpx;
+    display: flex;
+    color: #989A9B;
+    padding-bottom: 40rpx;
+}
+
+.pay_methods {
+    font-size: 32rpx;
+}
+
+.text {
+    position: absolute;
+    right: 30rpx;
+    color: #000;
+}
+
+.last {
+    padding-bottom: 10rpx;
+}
+
+.fee_wrapper {
+    color: #000;
+    padding-bottom: 10rpx;
+}
+
+.foot {
+    width: 720rpx;
+    position: relative;
+}
+
+.pay_wrapper {
+    display: flex;
+    position: absolute;
+    right: 30rpx;
+}
+
+.actual_pay {
+    color: #E1534C;
+}
+
+.order_time {
+    position: absolute;
+    right: 30rpx;
+    top: 80rpx;
+    font-size: 25rpx;
+    color: #989A9B;
+}
