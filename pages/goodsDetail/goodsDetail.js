@@ -1,4 +1,5 @@
 // miniprogram/pages/detail/detail.js
+import util from '../../utils/util.js'
 Page({
   data: {
     goods: [],
@@ -12,9 +13,8 @@ Page({
     this.setData({
       id: options.id
     })
-    wx.request({
-      url: 'http://localhost:1314/goodsPage',
-      success: res => {
+    util.request('http://localhost:1314/goodsPage')
+      .then(res => {
         let cur = [];
         let comment = [];
         res.data.goods.map(val => { // 当前商品
@@ -23,6 +23,7 @@ Page({
           }
         })
         console.log(cur, 'cur')
+        // 处理商品详情描述
         cur[0].content = cur[0].content.replace(/(。)/g, '。\n\n').replace(/(~)/g, '~\n\n');
         res.data.comments.map(val => {
           if (val.goods === cur[0].title) {
@@ -44,9 +45,7 @@ Page({
           comments_num: length - 1
         })
         // console.log(this.data.goods[0].title, 'goods')
-      }
-    })
-
+      })
   },
   showComment() {
     wx.navigateTo({
