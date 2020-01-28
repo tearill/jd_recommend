@@ -1,4 +1,5 @@
 // miniprogram/pages/feedback/feedback.js
+import util from '../../utils/util.js'
 Page({
   data: {
     type: [],
@@ -6,15 +7,13 @@ Page({
     content: ''
   },
   onLoad() {
-    wx.request({
-      url: 'http://localhost:1314/feedbackPage',
-      success: (res) => {
+    util.request('http://localhost:1314/feedbackPage') // 请求反馈类型数据
+      .then(res => {
         this.setData({
           type: res.data.typeData
         });
         console.log(this.data.type, 'type')
-      }
-    })
+      })
   },
   changeType(e) {
     const selectedIndex = e.detail.value;
