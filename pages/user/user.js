@@ -80,7 +80,6 @@ Page({
         url: '../discount/discount'
       })
     }
-
   },
   showOptions(e) { // 跳转账户选项界面
     let index = e.currentTarget.dataset.index;
@@ -98,6 +97,11 @@ Page({
       if(index > 3) {
         index = 0
       }
+      // 使用storage携带index给下一个界面，否则无法在加载时渲染数据
+      wx.setStorage({
+        key: 'account:index',
+        data: index
+      })
       wx.navigateTo({
         url: '../account/account?index=' + index
       })
