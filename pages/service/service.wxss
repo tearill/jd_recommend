@@ -1,6 +1,7 @@
 /* miniprogram/pages/service/service.wxss */
 
 @import "../discount/discount.wxss";
+@import "../account/account.wxss";
 page {
     background-color: #EFEFF4;
 }
@@ -38,14 +39,17 @@ page {
 
 .search_box {
     position: absolute;
-    top: 101rpx;
+    top: 112rpx;
     width: 100%;
+    height: 120rpx;
     z-index: 99;
+    box-sizing: border-box;
 }
 
 .search {
+    /* height: 100%; */
+    width: 100%;
     height: 120rpx;
-    width: 750rpx;
     padding-left: 30rpx;
     padding-top: 20rpx;
     background-color: #fff;
@@ -74,7 +78,6 @@ input {
     background-size: 100%;
     width: 30rpx;
     height: 30rpx;
-    /* margin-right: 10rpx; */
 }
 
 .delete {
@@ -98,12 +101,9 @@ input {
 .select {
     display: flex;
     flex-direction: column;
-    /* align-items: center; */
-    /* justify-content: center; */
     position: absolute;
     right: 60rpx;
-    top: 20rpx;
-    /* padding-left: 20rpx; */
+    top: 30rpx;
 }
 
 .select_icon {
@@ -112,18 +112,207 @@ input {
 }
 
 .select_text {
-    font-size: 20rpx;
+    font-size: 23rpx;
     color: #BCBCBC;
+}
+
+.select_text.select_active {
+    color: #DE554F;
 }
 
 .content {
     position: absolute;
-    top: 221rpx;
+    top: 242rpx;
     height: 100%;
+    background-color: #fff;
 }
 
 .text {
     padding-left: 30rpx;
     padding-right: 30rpx;
     text-align: center;
+}
+
+.body {
+    border-bottom: none;
+}
+
+.goodscard {
+    background-color: #fff;
+    border-bottom: 20rpx solid #EFEFF4;
+}
+
+.store {
+    font-size: 25rpx;
+    color: #797979;
+}
+
+.num {
+    color: #A5A5A5;
+    font-size: 25rpx;
+    padding-left: 30rpx;
+}
+
+.over_time {
+    display: flex;
+}
+
+.alert {
+    font-size: 25rpx;
+    color: #A5A5A5;
+}
+
+.alert_logo {
+    width: 35rpx;
+    height: 35rpx;
+    padding-left: 10rpx;
+}
+
+.cant_apply_service, .apply_service {
+    font-size: 30rpx;
+    color: #F2C7C1;
+    width: 170rpx;
+    height: 60rpx;
+    text-align: center;
+    line-height: 60rpx;
+    border: 1px solid #F2C7C1;
+    border-radius: 50rpx;
+    position: absolute;
+    right: 30rpx;
+}
+
+.apply_service {
+    color: #DE554F;
+    border: 1px solid #DE554F;
+}
+
+.goTop {
+    position: fixed;
+    bottom: 130rpx;
+    right: 20rpx;
+    width: 65rpx;
+    height: 65rpx;
+    border: 1px solid #DDDDDD;
+    border-radius: 50%;
+    background-color: #fff;
+    text-align: center;
+}
+
+.icon_goTop {
+    width: 40rpx;
+    height: 40rpx;
+    padding-top: 12rpx;
+    padding-left: 2rpx;
+}
+
+
+
+
+
+
+
+.isRuleShow {
+    display: block;
+    
+}
+
+.isRuleHide {
+    display: none;
+}
+
+.float {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    /* 弹出后背景的颜色 */
+    background-color: rgba(0, 0, 0, 0.5);
+    padding-left: 30rpx;
+    padding-left: 30rpx;
+    /* margin-top:80rpx; */
+}
+
+.time {
+    font-weight: bold;
+    font-size: 32rpx;
+}
+
+.order_time {
+    color: #000;
+    margin-top: 30rpx;
+    margin-bottom: 30rpx;
+}
+
+.animation-element {
+    width: 600rpx;
+    height: 100%;
+    padding-left: 30rpx;
+    padding-right: 30rpx;
+    background-color: #ffffff;
+    border: 1px solid #f3f0f0;
+    position: absolute;
+    right: -550rpx;
+    box-sizing: border-box;
+}
+
+.order_option {
+    /* background-color: red; */
+    width: 540rpx;
+    font-size: 25rpx;
+    display: flex;
+}
+
+.option {
+    width: 50%;
+    margin: 12rpx 7rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+    color: #000;
+    font-weight: normal;
+    background-color: #F6F6F6;
+    /* 设置一个相同宽度的边框使切换按钮时不会出现按钮大小跳动 */
+    border: 1px solid #F6F6F6;
+    display: inline-block;
+    text-align: center;
+    border-radius: 50rpx;
+    font-size: 30rpx;
+}
+/* 选择条件按钮被选中后 */
+.option.seleted {
+    color: #DE554F;
+    background-color: #FCF4F3;
+    border: 1px solid #DE554F;
+}
+
+.buttom {
+    width: 600rpx;
+    height: 110rpx;
+    font-size: 32rpx;
+    padding-top: 55rpx;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+}
+
+.animation-reset {
+    width: 50%;
+    height: 100%;
+    line-height: 50%;
+    text-align: center;
+    padding-top: 55rpx;
+    border-top: 1px solid #EFEFF4;
+}
+
+.animation-button {
+    width: 50%;
+    height: 100%;
+    line-height: 50%;
+    color: #fff;
+    text-align: center;
+    background-color: #ED7358;
+    padding-top: 55rpx;
 }

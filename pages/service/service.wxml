@@ -1,58 +1,126 @@
 <!-- miniprogram/pages/service/service.wxml -->
-<view class="navigator">
-    <scroll-view class="nav" scroll-x="{{true}}" scroll-left="{{navScrollLeft}}" scroll-with-animation="{{true}}">
-        <block wx:for="{{navData}}" wx:for-index="id" wx:for-item="navItem" wx:key="id">
-            <view class="wrap">
-                <view class="nav-item {{currentTab === id?'active':''}}" data-current="{{id}}" bindtap="switchNav">
-                    {{navItem.name}}
+<scroll-view class="bigWrap" 
+    scroll-y="true" 
+    scroll-top="{{scrollTop}}" 
+    bindscroll="scroll" 
+    style="position: absolute; left: 0; top:0; bottom: 0; right: -999rpx;">
+    <view class="navigator">
+        <scroll-view class="nav" scroll-x="{{true}}" scroll-left="{{navScrollLeft}}" scroll-with-animation="{{true}}">
+            <block wx:for="{{navData}}" wx:for-index="id" wx:for-item="navItem" wx:key="id">
+                <view class="wrap">
+                    <view class="nav-item {{currentTab === id?'active':''}}" data-current="{{id}}" bindtap="switchNav">
+                        {{navItem.name}}
+                    </view>
                 </view>
-            </view>
-        </block>
-    </scroll-view>
-</view>
-<view class="search_box">
-    <view class="search">
-        <image class="icon" src="../../assets/icons/search.png"></image>
-        <!-- 售后申请栏的输入框 -->
-        <input type="text" wx:if="{{currentTab === 0}}" placeholder="商品名称/商品编号/订单编号/系列号" value="{{inputValue}}" bindinput="gainContent" bindfocus="showCancel" bindblur="hideCancel" />
-        <input type="text" wx:else placeholder="商品名称/订单编号/服务单号" value="{{inputValue}}" bindinput="gainContent" bindfocus="showCancel" bindblur="hideCancel" />
-        <!-- 清空文字的图标 -->
-        <image class="delete" src="../../assets/icons/delete.png" wx:if="{{inputValue != ''}}" bindtap="hideCancel"></image>
-        <view class="select" wx:if="{{!cancelShowed}}">
-            <image class="select_icon" src="../../assets/icons/cancel.png"></image>
-            <text class="select_text">筛选</text>
-        </view>
-        <text class="cancel" wx:if="{{cancelShowed}}" bindtap="hideCancel">取消</text>
+            </block>
+        </scroll-view>
     </view>
-</view>
-<view class="{{currData == '' ? 'contain' : 'content' }}" wx:for="{{navData}}" wx:for-index="id" wx:for-item="navItem" wx:key="id">
-    <block wx:if="{{currentTab === id && currData != ''}}">
-        <view class="goodscard" wx:for="{{currData}}" wx:for-item="goods" wx:key="id">
-            <view class="head">
-                <image class="store_logo" wx:if="{{goods.store === '京东'}}" src="../../assets/icons/JD.png"></image>
-                <image class="store_logo" wx:else src="../../assets/icons/store.png"></image>
+    <view class="search_box">
+        <view class="search">
+            <image class="icon" src="../../assets/icons/search.png"></image>
+            <!-- 售后申请栏的输入框 -->
+            <input type="text" wx:if="{{currentTab === 0}}" placeholder="商品名称/商品编号/订单编号/系列号" value="{{inputValue}}" bindinput="gainContent" bindfocus="showCancel" bindblur="hideCancel" />
+            <input type="text" wx:else placeholder="商品名称/订单编号/服务单号" value="{{inputValue}}" bindinput="gainContent" bindfocus="showCancel" bindblur="hideCancel" />
+            <!-- 清空文字的图标 -->
+            <image class="delete" src="../../assets/icons/delete.png" wx:if="{{inputValue != ''}}" bindtap="hideCancel"></image>
+            <view class="select" wx:if="{{!cancelShowed}}" bindtap="showSelect">
+                <!-- 正常情况下的筛选图标 -->
+                <image class="select_icon" wx:if="{{!selected}}" src="../../assets/icons/select.png"></image>
+                <!-- 选中筛选后的筛选图标 -->
+                <image class="select_icon" wx:if="{{selected}}" src="../../assets/icons/select_active.png"></image>
+                <text class="select_text {{selected?'select_active':''}}">筛选</text>
             </view>
-            <view class="body">
-                <view class="body_hd">
-                    <image class="avatar" src="{{goods.avatar}}"></image>
+            <text class="cancel" wx:if="{{cancelShowed}}" bindtap="hideCancel">取消</text>
+        </view>
+    </view>
+    <view class="{{currData == '' ? 'contain' : 'content' }}" wx:for="{{navData}}" wx:for-index="id" wx:for-item="navItem" wx:key="id">
+        <block wx:if="{{currentTab === id && currData != ''}}">
+            <!-- 订单 -->
+            <view class="goodscard" wx:for="{{currData}}" wx:for-item="goods" wx:key="id">
+                <!-- 店铺logo 店铺名 -->
+                <view class="head">
+                    <image class="store_logo" wx:if="{{goods.store === '京东'}}" src="../../assets/icons/JD.png"></image>
+                    <image class="store_logo" wx:else src="../../assets/icons/store.png"></image>
+                    <view class="store">{{goods.store}}</view>
                 </view>
-                <view class="body_bd">
-                    <view class="body_title">{{goods.title}}</view>
+                <view class="body">
+                    <!-- 商品图片 -->
+                    <view class="body_hd">
+                        <image class="avatar" src="{{goods.avatar}}"></image>
+                    </view>
+                    <view class="body_bd">
+                        <view class="body_title">{{goods.title}}</view>
+                        <view class="num">数量：{{goods.num}}</view>
+                    </view>
                 </view>
+                <view class="foot">
+                    <view class="over_time" wx:if="{{!goods.service}}">
+                        <view class="alert">该商品已超过售后期</view>
+                        <image class="alert_logo" src="../../assets/icons/out_of_service.png"></image>
+                    </view>
+                    <view class="{{goods.service?'apply_service':'cant_apply_service'}}">申请售后</view>
+                </view>
+                <!-- 同一个订单/店铺的其他子订单 -->
+                <block wx:if="{{goods.child_order != ''}}" wx:for="{{goods.child_order}}" wx:for-item="child" wx:key="id">
+                    <view class="body">
+                        <view class="body_hd">
+                            <image class="avatar" src="{{child.avatar}}"></image>
+                        </view>
+                        <view class="body_bd">
+                            <view class="body_title">{{child.title}}</view>
+                            <view class="num">数量：{{child.num}}</view>
+                        </view>
+                    </view>
+                    <view class="foot">
+                        <view class="over_time">
+                            <view class="alert">该商品已超过售后期</view>
+                            <image class="alert_logo" src="../../assets/icons/out_of_service.png"></image>
+                        </view>
+                        <view class="{{goods.service?'apply_service':'cant_apply_service'}}">
+                            申请售后
+                        </view>
+                    </view>
+                </block>
             </view>
-            <view class="foot">
-                <view class="alert">该商品已超过售后期间</view>
-                <image class="alert_logo" src=""></image>
-                <button class="apply_service">申请售后</button>
+            <view class="no_more">没有更多了</view>
+        </block>
+        <view class="contain" wx:if="{{currData == ''}}">
+            <image class="logo" src="../../assets/images/nothing.png"></image>
+            <view class="text" wx:if="{{currentTab === 0}}">没有订单信息</view>
+            <view class="text" wx:if="{{currentTab === 1}}">没有处理中的服务单</view>
+            <view class="text" wx:if="{{currentTab === 2}}">没有待评价的服务单</view>
+            <view class="text" wx:if="{{currentTab === 3}}">没有服务单信息</view>
+            <view class="text" wx:if="{{currentTab === 3}}">如需查询2016年之前的服务单请提供订单编号联系京东客服</view>
+        </view>
+    </view>
+    <!-- 滑动一段距离后显示返回顶部的按钮 -->
+    <view class="goTop" bindtap="goTop" wx:if="{{currData != '' && floorstatus}}">
+        <image class="icon_goTop" src="../../assets/icons/back_to_top.png"></image>
+    </view>
+</scroll-view>
+
+<!-- 点击筛选弹出的选择菜单 -->
+<view class="float {{isRuleTrue?'isRuleShow':'isRuleHide'}} ">
+    <view class="animation-element" animation="{{animation}}">
+        <view class='time'>
+        <view class='order_time'>下单时间</view>
+            <view class="order_option">
+                <view class="option {{currentOption === 0?'seleted':''}}" bindtap="select" data-id="0">全部</view>
+                <view class="option {{currentOption === 1?'seleted':''}}" bindtap="select" data-id="1">一月内</view>
+            </view>
+            <view class="order_option">
+                <view class="option {{currentOption === 2?'seleted':''}}" bindtap="select" data-id="2">一个月至三个月</view>
+                <view class="option {{currentOption === 3?'seleted':''}}" bindtap="select" data-id="3">三个月至六个月</view>
+            </view>
+            <view class="order_option">
+                <view class="option {{currentOption === 4?'seleted':''}}" bindtap="select" data-id="4">六个月至一年</view>
+                <view class="option {{currentOption === 5?'seleted':''}}" bindtap="select" data-id="5">一年以上</view>
             </view>
         </view>
-    </block>
-    <view class="contain" wx:if="{{currData == ''}}">
-        <image class="logo" src="../../assets/images/nothing.png"></image>
-        <view class="text" wx:if="{{currentTab === 0}}">没有可以申请售后的服务单</view>
-        <view class="text" wx:if="{{currentTab === 1}}">没有处理中的服务单</view>
-        <view class="text" wx:if="{{currentTab === 2}}">没有待评价的服务单</view>
-        <view class="text" wx:if="{{currentTab === 3}}">没有服务单信息</view>
-        <view class="text" wx:if="{{currentTab === 3}}">如需查询2016年之前的服务单请提供订单编号联系京东客服</view>
+        <!-- 底部的两个按钮 -->
+        <view class='buttom'>
+            <view class="animation-reset" bindtap="reset">重置</view>
+            <view class="animation-button" bindtap="success">确定</view>
+        </view>
     </view>
 </view>
