@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "van-stepper": "../../components/stepper/index"
+  },
+  "navigationBarTitleText": "购物车",
+  "navigationBarBackgroundColor": "#ffffff"
+}

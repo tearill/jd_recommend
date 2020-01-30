@@ -1,0 +1,179 @@
+/* pages/shopCart/shopCart.wxss */
+
+page {
+    background-color: #EFEFF4;
+}
+
+.not_login {
+    background-color: #fff;
+    height: 160rpx;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    width: 100rpx;
+    height: 100rpx;
+}
+
+.hint_text {
+    color: #BCBCBC;
+    font-size: 28rpx;
+    padding-left: 30rpx;
+    padding-right: 20rpx;
+}
+
+.login {
+    color: #fff;
+    background-color: #DF443B;
+    font-size: 30rpx;
+    height: 30rpx;
+    width: 110rpx;
+    text-align: center;
+    line-height: 30rpx;
+    padding-top: 10rpx;
+    padding-bottom: 10rpx;
+    border-radius: 2px;
+}
+
+.cart_lists {
+    /* position: relative; */
+    margin-bottom: 90rpx;
+}
+
+.goodscard {
+    background-color: #fff;
+    display: flex;
+    padding: 20rpx 20rpx 20rpx 20rpx;
+    margin-bottom: 2px;
+    border-top: 1px solid #F3F3F3;
+    position: relative;
+    /* justify-content: center; */
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.avatar {
+    width: 180rpx;
+    height: 180rpx;
+    margin-left: 15rpx;
+}
+
+.goods_wrapper {
+    display: flex;
+}
+
+.goods_body {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20rpx;
+}
+
+.title {
+    max-width: 360rpx;
+    /* 超出两行打点 */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    font-size: 32rpx;
+}
+
+.delete {
+    width: 30rpx;
+    height: 30rpx;
+    position: absolute;
+    right: 30rpx;
+    top: 20rpx;
+}
+
+.select_info {
+    display: flex;
+    font-size: 25rpx;
+    color: #7E7E7F;
+}
+
+.weight {
+    margin-right: 10rpx;
+}
+
+.price {
+    color: #DF443B;
+    font-size: 32rpx;
+    padding-top: 30rpx;
+    font-weight: bold;
+}
+
+.selector {
+    position: absolute;
+    right: 20rpx;
+    bottom: 20rpx;
+}
+
+
+
+/* 固定底部的按钮 */
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    height: 90rpx;
+    background-color: #fff;
+    display: flex;
+    padding-left: 30rpx;
+    align-items: center;
+    border-bottom: 1px solid #F3F3F3;
+    border-top: 1px solid #F3F3F3;
+}
+
+.footer icon {
+    padding-top: 10rpx;
+    padding-right: 10rpx;
+}
+
+.select_all text {
+    font-size: 32rpx;
+    color: #DF443B;
+    font-weight: bold;
+}
+
+.total_wrapper {
+    margin-left: 20rpx;
+}
+
+.total {
+    padding-right: 20rpx;
+}
+
+.total text {
+    font-size: 35rpx;
+    font-weight: bold;
+}
+
+.all_price {
+    font-size: 25rpx;
+    color: #7E7E7F;
+}
+
+/* text 父元素下第二个 */
+
+.all_price text:nth-child(2) {
+    padding-right: 10rpx;
+}
+
+.go_to_pay {
+    position: absolute;
+    right: 0;
+    background-color: #DF443B;
+    height: 90rpx;
+    width: 190rpx;
+    text-align: center;
+    line-height: 90rpx;
+    font-size: 32rpx;
+    color: #fff;
+}
