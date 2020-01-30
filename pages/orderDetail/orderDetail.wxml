@@ -35,7 +35,8 @@
             <image class="store_logo" wx:if="{{goods.store === '京东'}}" src="../../assets/icons/JD.png"></image>
             <image class="store_logo" wx:else src="../../assets/icons/store.png"></image>
             <view class="store">{{goods.store}}</view>
-            <view class="contact">
+            <!-- 联系卖家按钮 -->
+            <view class="contact" bindtap="to_Seller">
                 <image class="seller_logo" src="../../assets/icons/seller.png"></image>
                 <view class="contact_seller">联系卖家</view>
             </view>

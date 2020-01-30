@@ -47,4 +47,9 @@ Page({
       console.log('deal')
     })
   },
+  to_Seller() {
+    wx.navigateTo({
+      url: '../seller/seller'
+    })
+  }
 })

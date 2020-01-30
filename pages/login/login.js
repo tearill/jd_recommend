@@ -47,6 +47,10 @@ Page({
           wx.switchTab({
             url: '../user/user'
           })
+        } else if (that.data.prev === 'cart') {
+          wx.switchTab({
+            url: '../shopCart/shopCart'
+          })
         } else {
           wx.navigateTo({
             url: '../' + that.data.prev + '/' + that.data.prev
