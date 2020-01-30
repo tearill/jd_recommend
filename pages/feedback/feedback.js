@@ -4,7 +4,11 @@ Page({
   data: {
     type: [],
     index: 0,
-    content: ''
+    content: '',
+    toastData: {}
+  },
+  onReady() {
+    this.toast = this.selectComponent("#toast");
   },
   onLoad() {
     util.request('http://localhost:1314/feedbackPage') // 请求反馈类型数据
@@ -31,24 +35,25 @@ Page({
   },
   submit() {
     if (this.data.content === '') {
-      wx.showToast({
-        title: '请填写内容',
-        image: '../../assets/icons/alert.png',
-        duration: 2000,
-        // complete: function () {
-        //   setTimeout(function () {
-        //     wx.switchTab({ // Toast中使用switchTab跳转界面
-        //       url: '../user/user'
-        //     })
-        //   }, 2000) // 延迟跳转
-        // }
+      this.setData({
+        toastData: {
+          icon: "alert",
+          info1: "请填写内容",
+          top: "620rpx"
+        }
       })
+      this.toast.showToast()
+      this.toast.hideToast()
     } else {
-      wx.showToast({
-        title: '提交成功',
-        image: '../../assets/icons/success.png',
-        duration: 2000,
+      this.setData({
+        toastData: {
+          icon: "success",
+          info1: "提交成功",
+          top: "620rpx"
+        }
       })
+      this.toast.showToast()
+      this.toast.hideToast()
     }
     setTimeout(() => {
       wx.switchTab({

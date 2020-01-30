@@ -1,4 +1,5 @@
 <!-- miniprogram/pages/feedback/feedback.wxml -->
+<toast id="toast" toast-data="{{toastData}}"></toast>
 <view class="title">购买和售后支持请咨询京东客服</view>
 <view class="contain">
     <view class="content">
