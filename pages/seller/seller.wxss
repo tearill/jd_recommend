@@ -1,0 +1,22 @@
+/* pages/seller/seller.wxss */
+
+.wrap {
+    margin-top: 100rpx;
+    text-align: center;
+}
+
+.logo {
+    width: 150rpx;
+    height: 150rpx;
+}
+
+.head {
+    padding-top: 50rpx;
+    font-size: 32rpx;
+}
+
+.text {
+    font-size: 28rpx;
+    color: #989A9B;
+    padding-top: 30rpx;
+}
