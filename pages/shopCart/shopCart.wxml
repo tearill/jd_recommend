@@ -1,0 +1,59 @@
+<!-- pages/shopCart/shopCart.wxml -->
+<!-- 顶部的提示 未登录或者是购物车是空的 -->
+<view class="not_login" wx:if="{{flag === 0 || !hasCart}}">
+    <image class="logo" src="../../assets/icons/cart_not_login.png"></image>
+    <view class="hint_text" wx:if="{{flag === 0}}">登录后可同步电脑与手机购物车</view>
+    <view class="hint_text" wx:if="{{!hasCart}}">购物车空空如也,赶紧逛逛吧~</view>
+    <view class="login" bindtap="go_login" wx:if="{{flag === 0}}">登录</view>
+</view>
+<!-- 购物车不为空 -->
+<!-- 商品 -->
+<view class="cart_lists">
+    <block wx:if="{{hasCart}}" wx:for="{{cartgoods}}" wx:for-item="goods" wx:key="id">
+        <view class="goodscard" bindtap="goDetail" data-index="{{index}}">
+            <!-- 商品前面的勾选图标 -->
+            <icon type="success" size="20" color="{{goods.select ? '#DE554F': '#aaa'}}" size="16" catchtap="select" data-index="{{index}}" />
+            <view class="goods_wrapper">
+                <view class="avatar">
+                    <image class="avatar" src="{{goods.img}}"></image>
+                </view>
+                <!-- 标题 重量 类型 价格 -->
+                <view class="goods_body">
+                    <view class="title_wrapper">
+                        <view class="title">{{goods.title}}</view>
+                        <!-- catchtap阻止父元素触发点击事件 -->
+                        <image class="delete" src="../../assets/icons/delete_goods.png" catchtap="delete_goods" data-index="{{index}}"></image>
+                    </view>
+                    <view class="select_info">
+                        <view class="weight">{{goods.weight}}</view>
+                        <view class="type">{{goods.type}}</view>
+                    </view>
+                    <view class="price">{{goods.price}}</view>
+                    <van-stepper class="selector" value="{{goods.num}}" integer data-index="{{index}}" catch:change="change_num" />
+                    
+                </view>
+            </view>
+        </view>
+    </block>
+</view>
+<!-- 固定在底部的一些按钮 -->
+<view class="footer" wx:if="{{hasCart}}">
+    <icon type="success" size="20" color="{{selectAll ? '#DE554F': '#aaa'}}" bindtap="select_all"></icon>
+    <view class="select_all">
+        <text>全选</text>
+    </view>
+    <!-- 合计价格 总额 立减 -->
+    <view class="total_wrapper">
+        <view class="total">
+            <text>合计:</text>
+            <text>¥{{totalPrice}}</text>
+        </view>
+        <view class="all_price">
+            <text>总额:</text>
+            <text>¥{{all_price}}</text>
+            <text>立减:</text>
+            <text>¥{{discount_price}}</text>
+        </view>
+    </view>
+    <view class="go_to_pay" bindtap="go_to_pay">去结算({{total_num}})</view>
+</view>
