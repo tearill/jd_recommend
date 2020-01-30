@@ -55,7 +55,7 @@ page {
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
   overflow: hidden;
-}
+} 
 .media-box__price {
   color: #DE554F;
   font-size: 30rpx;
