@@ -1,0 +1,6 @@
+<!-- pages/fix/fix.wxml -->
+<view class="wrap">
+    <image class="logo" src="../../assets/images/jd_recommend.jpg"></image>
+    <view class="head">无法打开值得买京东优选</view>
+    <view class="text">不支持打开非业务域名https://jdcs.m.jd.com，请重新配置。</view>
+</view>

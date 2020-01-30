@@ -1,0 +1,8 @@
+{
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "navigationBar": "../../components/navigationBar/index",
+    "toast": "../../components/toast/index",
+    "van-stepper": "../../components/stepper/index"
+  }
+}

@@ -1,0 +1,2 @@
+/* pages/fix/fix.wxss */
+@import '../seller/seller.wxss';

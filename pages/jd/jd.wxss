@@ -1,0 +1,418 @@
+/* pages/jd/jd.wxss */
+@import "../../style/popup.wxss";
+page {
+    background-color: #EFEFF4;
+}
+
+.head {
+    width: 750rpx;
+    /* height: 60%; */
+}
+
+.images_swiper {
+    width: 750rpx;
+    height: 50vh;
+}
+
+.scroll_img {
+    width: 750rpx;
+    height: 100%;
+}
+
+.title_box {
+    width: 100%;
+    padding-left: 30rpx;
+    box-sizing: border-box;
+    background-color: #fff;
+    border-bottom: 1rpx solid #ddd;
+    position: relative;
+    padding-bottom: 30rpx;
+}
+
+.title_hd {
+    display: flex;
+    padding-bottom: 30rpx;
+}
+
+.price {
+    color: #DF443B;
+    font-size: 32rpx;
+    font-weight: bold;
+    padding-top: 20rpx;
+}
+
+.big_Red {
+    font-size: 45rpx;
+}
+
+.share_box {
+    position: absolute;
+    right: 30rpx;
+    padding-top: 20rpx;
+    font-size: 20rpx;
+    text-align: center;
+}
+
+.share_text {
+    background-color: #fff;
+    font-size: 20rpx;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* 去除按钮的边框线 */
+.share_text::after {
+    content: none;
+    border: none;
+}
+
+.share_logo {
+    width: 35rpx;
+    height: 35rpx;
+}
+
+.title_bd {
+    font-size: 36rpx;
+}
+
+.self_sell {
+    font-size: 25rpx;
+    background-color: #DF443B;
+    display: inline-block;
+    padding: 5rpx;
+    margin-right: 10rpx;
+    color: #fff;
+    border-radius: 1px;
+}
+
+.l_text {
+    color: #989A9B;
+    font-size: 32rpx;
+    padding-right: 25rpx;
+    min-width: 60rpx;
+}
+
+.discount_box {
+    width: 100%;
+    box-sizing: border-box;
+    padding-left: 30rpx;
+    padding-top: 30rpx;
+    padding-bottom: 30rpx;
+    position: relative;
+    background-color: #fff;
+    display: flex;
+}
+
+.discount_wrapper {
+    display: flex;
+}
+
+.right_wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.all {
+    width: 35rpx;
+    height: 35rpx;
+    position: absolute;
+    right: 30rpx;
+}
+
+.discount {
+    display: inline-block;
+    background-color: #DF443B;
+    color: #fff;
+    font-size: 25rpx;
+    padding: 5rpx;
+    margin-right: 20rpx;
+    border-radius: 1px;
+}
+
+.discount_card {
+    width: 230rpx;
+    height: 120rpx;
+    padding-right: 20rpx;
+}
+
+.card_wrapper {
+    padding-left: 30rpx;
+    background-color: #fff;
+}
+
+.promote_box {
+    border-top: 1px solid #ddd;
+    background-color: #fff;
+    width: 100%;
+    box-sizing: border-box;
+    padding-top: 30rpx;
+    padding-left: 30rpx;
+    padding-bottom: 10rpx;
+    margin-bottom: 30rpx;
+    position: relative;
+    display: flex;
+    font-size: 32rpx;
+    border-bottom: 1px solid #ddd;
+}
+
+.enjoy {
+    display: inline-block;
+    padding-bottom: 30rpx;
+}
+
+.tab_wrapper {
+    box-sizing: border-box;
+    display: flex;
+    margin-bottom: 20rpx;
+}
+
+.tabs {
+    max-height: 30rpx;
+    display: inline;
+    font-size: 20rpx;
+    color: #DF443B;
+    padding: 5rpx;
+    margin-right: 10rpx;
+    border: 1px solid #DF443B;
+}
+/* 促销卡片没展示出来时 */
+.describe {
+    max-width: 430rpx;
+    /* 超出两行打点 */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+}
+/* 促销卡片展示出来后 显示全部文字 */
+.text_show {
+    max-width: 430rpx;
+}
+
+.choose_box {
+    position: relative;
+    display: flex;
+    background-color: #fff;
+    margin-bottom: 30rpx;
+    padding-left: 30rpx;
+    padding-top: 30rpx;
+    padding-bottom: 30rpx;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    box-sizing: border-box;
+}
+
+.choose_wrapper {
+    display: flex;
+}
+
+.choose_value {
+    font-size: 32rpx;
+}
+
+.follow {
+    padding-left: 30rpx;
+}
+
+.more {
+    width: 35rpx;
+    height: 20rpx;
+    position: absolute;
+    right: 30rpx;
+    top: 40rpx;
+}
+
+.send_box {
+    width: 750rpx;
+    position: relative;
+    padding-top: 30rpx;
+    padding-left: 30rpx;
+    padding-bottom: 30rpx;
+    border-top: 1px solid #ddd;
+    background-color: #fff;
+    display: flex;
+}
+
+.address_wrapper {
+    display: flex;
+}
+
+.mark {
+    width: 55rpx;
+    height: 55rpx;
+    margin-top: -5rpx;
+}
+
+.right_wrapper {
+    display: flex;
+    flex-direction: column;
+    font-size: 32rpx;
+}
+
+.hint {
+    color: #989A9B;
+    max-width: 630rpx;
+}
+
+.weight_box {
+    position: relative;
+    padding-left: 30rpx;
+    padding-top: 30rpx;
+    padding-bottom: 30rpx;
+    display: flex;
+    border-bottom: 1px solid #ddd;
+    background-color: #fff;
+    font-size: 32rpx;
+}
+
+.options {
+    padding: 20rpx 50rpx 20rpx 30rpx;
+    font-size: 28rpx;
+    color: #989A9B;
+    line-height: 2;
+    padding-bottom: 30rpx;
+    border-bottom: 1px solid #ddd;
+}
+
+.options icon {
+    padding-right: 15rpx;
+}
+
+.options text {
+    padding-right: 20rpx;
+}
+
+.detail_box {
+    background-color: #fff;
+    padding-top: 30rpx;
+    margin-bottom: 100rpx;
+}
+
+.slide_wrapper {
+    width: 100%;
+    display: flex;
+    font-size: 32rpx;
+    color: #989A9B;
+    justify-content: center;
+}
+
+.slide_logo {
+    width: 35rpx;
+    height: 35rpx;
+    padding-left: 10rpx;
+    padding-top: 10rpx;
+    padding-bottom: 30rpx;
+}
+
+/* 回到顶部  */
+
+.goTop {
+    position: fixed;
+    bottom: 200rpx;
+    right: 20rpx;
+    width: 65rpx;
+    height: 65rpx;
+    border: 1px solid #DDDDDD;
+    border-radius: 50%;
+    background-color: #fff;
+    text-align: center;
+}
+
+.icon_goTop {
+    width: 40rpx;
+    height: 40rpx;
+    padding-top: 12rpx;
+    padding-left: 2rpx;
+}
+
+/* 底部固定内容 */
+
+.goodsaction {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    display: flex;
+    background-color: #fff;
+    padding-left: 30rpx;
+    height: 100rpx;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.contact_wrapper {
+    width: 110rpx;
+    margin-right: 50rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.cart_wrapper {
+    width: 80rpx;
+    margin-right: 30rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.around {
+    font-size: 20rpx;
+    position: absolute;
+    top: 10rpx;
+    left: 40rpx;
+    z-index: 99;
+    background-color: #fff;
+    height: 25rpx;
+    width: 25rpx;
+    text-align: center;
+    line-height: 25rpx;
+    color: #DF443B;
+    border: 1px solid #DF443B;
+    border-radius: 100%;
+}
+
+.seller, .cart {
+    width: 40rpx;
+    height: 40rpx;
+    /* background-color: #000; */
+}
+
+.seller {
+    padding-left: 10rpx;
+}
+
+.cart {
+    padding-left: 5rpx;
+}
+
+.text {
+    font-size: 20rpx;
+    width: 100%;
+}
+
+.btn_wrapper {
+    display: flex;
+    width: 100%;
+}
+
+.btn {
+    width: 50%;
+    font-size: 32rpx;
+    text-align: center;
+    line-height: 100rpx;
+    color: #fff;
+    border-radius: 0;
+}
+
+.add_cart {
+    background-color: #F2AE3C;
+}
+
+.buy {
+    background-color: #DF3F24;
+}

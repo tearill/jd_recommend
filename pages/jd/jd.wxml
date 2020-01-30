@@ -1,0 +1,184 @@
+<!-- pages/jd/jd.wxml -->
+<!-- 自定义导航栏 -->
+<navigationBar navbar-data='{{navbarData}}'></navigationBar>
+<toast id="toast" toast-data="{{toastData}}"></toast>
+<scroll-view class="bigWrap" scroll-y="true" scroll-top="{{scrollTop}}" bindscroll="scroll" style="position: absolute; left: 0; top:0; bottom: 0; right: -999rpx;">
+    <!-- 顶部轮播图片 -->
+    <view class="head" style='margin-top: {{height}}px' wx:for="{{currData}}" wx:for-item="goods" wx:for-index="id" wx:key="id">
+        <swiper class="images_swiper" indicator-dots="{{true}}">
+            <swiper-item wx:for="{{goods.images}}" wx:for-item="img" wx:key="id">
+                <image class="scroll_img" src="{{img}}" bindtap="enlargeImg" data-index="{{index}}"></image>
+            </swiper-item>
+        </swiper>
+    </view>
+    <!-- 商品标题 是否为自营 分享按钮 -->
+    <view class="title_box" wx:for="{{currData}}" wx:for-item="goods" wx:key="id">
+        <view class="title_hd">
+            <view class="price">
+                ¥
+                <text class="big_Red">{{price_before_dot}}.</text>
+                {{price_after_dot}}
+            </view>
+            <!-- 分享 -->
+            <view class="share_box" bindtap="share">
+                <image class="share_logo" src="../../assets/icons/share.png"></image>
+                <!-- plain一定要设置为false 不然没办法去除框线 -->
+                <button class="share_text" open-type="share" plain="{{false}}">分享</button>
+            </view>
+        </view>
+        <!-- 标题 -->
+        <view class="title_bd">
+            <view class="self_sell" wx:if="{{!self_sell}}">自营</view>
+            <text class="title">{{goods.title}}</text>
+        </view>
+    </view>
+    <!-- 领券 -->
+    <view class="discount_box" bindtap="showDiscount">
+        <view class="l_text">领券</view>
+        <view class="discount_wrapper">
+            <view class="discount" wx:if="{{!discountShow}}">满45减20</view>
+        </view>
+        <!-- 当优惠券不显示时 -->
+        <image class="all" src="../../assets/icons/down.png" wx:if="{{!discountShow}}"></image>
+        <image class="all" src="../../assets/icons/up.png" wx:if="{{discountShow}}"></image>
+    </view>
+    <!-- 优惠券卡片 -->
+    <view class="card_wrapper">
+        <!-- 当优惠券显示但没有领取时 bindtap显示领过之后的 -->
+        <image class="discount_card" wx:if="{{discountShow && !isGet}}" bindtap="get_discount" src="../../assets/images/discount_not_get.png"></image>
+        <image class="discount_card" wx:if="{{discountShow && isGet}}" src="../../assets/images/discount_getted.png"></image>
+    </view>
+    <!-- 促销 -->
+    <view class="promote_box" bindtap="showPromote">
+        <view class="l_text">促销</view>
+        <view class="right_wrapper">
+            <!-- 当promote展示出来的时候显示 -->
+            <view class="enjoy" wx:if="{{promoteShow}}">可享受以下优惠</view>
+            <view class="tab_wrapper">
+                <view class="tabs">跨自营/店铺满减</view>
+                <view class="{{promoteShow?'text_show':'describe'}}">每满99元,可减10元，最多可减200元</view>
+            </view>
+            <view class="tab_wrapper">
+                <view class="tabs">多买优惠</view>
+                <view class="{{promoteShow?'text_show':'describe'}}">满2件，总件打8折</view>
+            </view>
+            <image class="all" src="../../assets/icons/down.png" wx:if="{{!promoteShow}}"></image>
+            <image class="all" src="../../assets/icons/up.png" wx:if="{{promoteShow}}"></image>
+        </view>
+    </view>
+    <!-- 已选 -->
+    <view class="choose_box" bindtap="showModel">
+        <view class="l_text">已选</view>
+        <view class="choose_wrapper">
+            <view class="choose_value">{{choose_value}}</view><text class="follow" wx:if="{{num != 0}}">{{num}}件</text>
+        </view>
+        <image class="more" src="../../assets/icons/more.png"></image>
+    </view>
+    <!-- 送至 -->
+    <view class="send_box">
+        <view class="l_text">送至</view>
+        <view class="right_wrapper">
+            <view class="address_wrapper">
+                <image class="mark" src="../../assets/icons/mark.png"></image>
+                <view class="address">北京 朝阳区 三环以内</view>
+            </view>
+            <view class="hint">现货，现在至明天23:00前下单，预计02月03日(周一)送达，受全国道路交通影响，您的订单会延迟派送，请您耐心等待</view>
+        </view>
+    </view>
+    <!-- 重量 -->
+    <view class="weight_box">
+        <view class="l_text">重量</view>
+        <view class="weight">0.04g</view>
+    </view>
+    <!-- 一些提示选项 -->
+    <view class="options">
+        <icon type="success" size="10" color="#DE554F"></icon>
+        <text>京东发货&售后</text>
+        <icon type="success" size="10" color="#DE554F"></icon>
+        <text>99元免基础配送费(20kg内)</text>
+        <icon type="success" size="10" color="#DE554F"></icon>
+        <text>自提</text>
+        <icon type="success" size="10" color="#DE554F"></icon>
+        <text>次日达</text>
+        <icon type="success" size="10" color="#DE554F"></icon>
+        <text>7天无理由退货(拆封后不支持)</text>
+    </view>
+    <!-- 此处省略店铺卡片和评论卡片 -->
+    <!-- 商品详情 -->
+    <view class="detail_box">
+        <view class="slide_wrapper">
+            <view class="slide_up">上滑查看商品详情</view>
+            <image class="slide_logo" src="../../assets/icons/up.png"></image>
+        </view>
+        <!-- 商品详情图片 -->
+        <block wx:for="{{currData}}" wx:for-item="goods" wx:key="id">
+            <block wx:for="{{goods.infos}}" wx:for-item="img" wx:key="id">
+                <image class="info" mode="widthFix" src="{{img}}"></image>
+            </block>
+        </block>
+    </view>
+    <!-- 滑动一段距离后显示返回顶部的按钮 -->
+    <view class="goTop" bindtap="goTop" wx:if="{{currData != '' && floorstatus}}">
+        <image class="icon_goTop" src="../../assets/icons/back_to_top.png"></image>
+    </view>
+</scroll-view>
+
+
+<!-- 弹出的选择商品类别的菜单 -->
+<view class="commodity_screen" bindtap="hideModal" wx:if="{{showModalStatus}}"></view>
+<!-- 弹出框 -->
+<view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showModalStatus}}">
+    <view class="pop_head">
+        <!-- 图片 -->
+        <image class="pop_avatar" src="{{imgList[0]}}"></image>
+        <!-- 价格 -->
+        <view class="pop_price">
+            <view class="pop_price">
+                ¥
+                <text class="pop_big_Red">{{price_before_dot}}.</text>
+                {{price_after_dot}}
+            </view>
+        </view>
+    </view>
+    <view class="pop_options">
+        <view class="type">版本</view>
+        <view class="type_option">
+            <view class="option {{currentOption === 0?'seleted':''}}" bindtap="select" data-id="0" data-type="版本一">
+                版本一
+            </view>
+            <view class="option {{currentOption === 1?'seleted':''}}" bindtap="select" data-id="1" data-type="版本二">
+                版本二
+            </view>
+            <view class="option {{currentOption === 2?'seleted':''}}" bindtap="select" data-id="2" data-type="版本三">
+                版本三
+            </view>
+        </view>
+    </view>
+    <view class="num_select">
+        <view class="num_text">数量</view>
+        <van-stepper class="selector" value="{{ 1 }}" integer bind:change="onChange" bind:minus="minus"/>
+        <view class="minimum" wx:if="{{minShow}}">(最少一件)</view>
+    </view>
+    <view class='bottom'>
+        <view class="animation-reset" bindtap="addCart">加入购物车</view>
+        <view class="animation-button" bindtap="buy">立即购买</view>
+    </view>
+</view>
+
+
+<!-- 底部固定的栏目 -->
+<view class="goodsaction">
+    <view class="contact_wrapper" bindtap="to_seller">
+        <image class="seller" src="../../assets/icons/communication_icon.png"></image>
+        <text class="text">联系客服</text>
+    </view>
+    <view class="cart_wrapper" bindtap="to_cart">
+        <image class="cart" src="../../assets/icons/add_cart.png"></image>
+        <text class="text">购物车</text>
+        <text class="around" wx:if="{{allNum != 0}}">{{allNum}}</text>
+    </view>
+    <view class="btn_wrapper">
+        <button class="btn add_cart" bindtap="showModel">加入购物车</button>
+        <button class="btn buy" bindtap="showModel">立即购买</button>
+    </view>
+</view>
