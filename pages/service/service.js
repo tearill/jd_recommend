@@ -139,6 +139,7 @@ Page({
     this.setData({
       isRuleTrue: true
     })
+    // 左偏移245 step表示一个动作的开始
     this.animation.translate(-245, 0).step()
     this.setData({ animation: this.animation.export() })
   },
@@ -166,5 +167,16 @@ Page({
     this.setData({
       currentOption: parseInt(cur)
     })
+  },
+  to_after_market(e) { // 跳转选择售后类型
+    let service = e.currentTarget.dataset.service // 是否可以申请售后标记
+    let id = e.currentTarget.dataset.id // 申请售后的商品的id
+    console.log(service)
+    console.log(id)
+    if(service) {
+      wx.navigateTo({
+        url: '../afterMarket/afterMarket?id=' + id
+      })
+    }
   }
 })

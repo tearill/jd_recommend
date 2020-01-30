@@ -58,7 +58,10 @@
                         <view class="alert">该商品已超过售后期</view>
                         <image class="alert_logo" src="../../assets/icons/out_of_service.png"></image>
                     </view>
-                    <view class="{{goods.service?'apply_service':'cant_apply_service'}}">申请售后</view>
+                    <!-- 申请售后按钮 -->
+                    <view class="{{goods.service?'apply_service':'cant_apply_service'}}" data-service="{{goods.service}}" data-id="{{goods.id}}" bindtap="to_after_market">
+                        申请售后
+                    </view>
                 </view>
                 <!-- 同一个订单/店铺的其他子订单 -->
                 <block wx:if="{{goods.child_order != ''}}" wx:for="{{goods.child_order}}" wx:for-item="child" wx:key="id">
@@ -72,17 +75,18 @@
                         </view>
                     </view>
                     <view class="foot">
-                        <view class="over_time">
+                        <view class="over_time" wx:if="{{!goods.service}}">
                             <view class="alert">该商品已超过售后期</view>
                             <image class="alert_logo" src="../../assets/icons/out_of_service.png"></image>
                         </view>
-                        <view class="{{goods.service?'apply_service':'cant_apply_service'}}">
+                        <!-- 申请售后按钮 -->
+                        <view class="{{goods.service?'apply_service':'cant_apply_service'}}" data-service="{{goods.service}}" data-id="{{goods.id}}" bindtap="to_after_market">
                             申请售后
                         </view>
                     </view>
                 </block>
             </view>
-            <view class="no_more">没有更多了</view>
+            <view class="no_more">没有更多订单了~</view>
         </block>
         <view class="contain" wx:if="{{currData == ''}}">
             <image class="logo" src="../../assets/images/nothing.png"></image>
@@ -100,10 +104,10 @@
 </scroll-view>
 
 <!-- 点击筛选弹出的选择菜单 -->
-<view class="float {{isRuleTrue?'isRuleShow':'isRuleHide'}} ">
+<view class="float {{isRuleTrue?'isRuleShow':'isRuleHide'}}">
     <view class="animation-element" animation="{{animation}}">
         <view class='time'>
-        <view class='order_time'>下单时间</view>
+            <view class='order_time'>下单时间</view>
             <view class="order_option">
                 <view class="option {{currentOption === 0?'seleted':''}}" bindtap="select" data-id="0">全部</view>
                 <view class="option {{currentOption === 1?'seleted':''}}" bindtap="select" data-id="1">一月内</view>
@@ -118,7 +122,7 @@
             </view>
         </view>
         <!-- 底部的两个按钮 -->
-        <view class='buttom'>
+        <view class='bottom'>
             <view class="animation-reset" bindtap="reset">重置</view>
             <view class="animation-button" bindtap="success">确定</view>
         </view>
