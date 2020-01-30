@@ -1,4 +1,6 @@
 {
   "usingComponents": {},
-  "navigationBarTitleText": "值友评论"
+  "navigationBarTitleText": "值友评论",
+  "navigationBarTextStyle": "white",
+  "enablePullDownRefresh": true
 }
