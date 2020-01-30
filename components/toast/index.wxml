@@ -1,0 +1,9 @@
+<!-- components/toast/index.wxml -->
+<!-- 距离顶部高度由业务需要动态确定 -->
+<view class='mask' hidden="{{hide}}" style='top: {{toastData.top}}'>
+    <image class="image" src='../../assets/icons/{{toastData.icon}}.png' mode='aspectFit'></image>
+    <view class="info">
+        <view class='info1' wx:if="{{toastData.info1 != ''}}">{{toastData.info1}}</view>
+        <view class="info2" wx:if="{{toastData.info2 != ''}}">{{toastData.info2}}</view>
+    </view>
+</view>

@@ -1,0 +1,33 @@
+/* components/toast/index.wxss */
+
+.mask {
+    width: 440rpx;
+    height: auto;
+    border-radius: 20rpx;
+    position: fixed;
+    left: 155rpx;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.6);
+    text-align: center;
+    padding-bottom: 30rpx;
+}
+
+.image {
+    z-index: 1000;
+    width: 80rpx;
+    height: 80rpx;
+    padding-top: 30rpx;
+    padding-bottom: 20rpx;
+}
+
+.info1, .info2 {
+    color: #ffffff;
+    font-size: 32rpx;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
