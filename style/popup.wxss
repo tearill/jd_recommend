@@ -1,0 +1,135 @@
+/* 上拉菜单 */
+
+.commodity_screen {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* opacity: 0.2; */
+    overflow: hidden;
+    z-index: 1000;
+    color: #fff;
+}
+
+/*对话框 */
+
+.commodity_attr_box {
+    height: 70vh;
+    width: 100%;
+    overflow: hidden;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 2000;
+    background: #fff;
+    padding-top: 30rpx;
+    padding-left: 30rpx;
+}
+
+.pop_head {
+    display: flex;
+}
+
+.pop_avatar {
+    width: 200rpx;
+    height: 200rpx;
+}
+
+.pop_price {
+    box-sizing: border-box;
+    padding-top: 70rpx;
+    font-size: 28rpx;
+    color: #DF443B;
+    font-weight: bold;
+    padding-left: 20rpx;
+}
+
+.pop_big_Red {
+    font-size: 32rpx;
+}
+
+.pop_options {
+    padding-bottom: 30rpx;
+    border-bottom: 1px solid #ddd;
+}
+
+.type, .num_text, .minimum {
+    font-size: 32rpx;
+    color: #989A9B;
+    padding-top: 50rpx;
+    padding-left: 30rpx;
+    padding-bottom: 30rpx;
+}
+
+.minimum {
+    color: #000;
+}
+
+.option {
+    /* width: 50%; */
+    margin: 12rpx 20rpx;
+    height: 60rpx;
+    padding-left: 30rpx;
+    padding-right: 30rpx;
+    line-height: 60rpx;
+    color: #000;
+    font-weight: normal;
+    background-color: #F6F6F6;
+    /* 设置一个相同宽度的边框使切换按钮时不会出现按钮大小跳动 */
+    border: 1px solid #F6F6F6;
+    display: inline-block;
+    text-align: center;
+    border-radius: 50rpx;
+    font-size: 30rpx;
+}
+
+/* 选择条件按钮被选中后 */
+
+.option.seleted {
+    color: #DE554F;
+    background-color: #FCF4F3;
+    border: 1px solid #DE554F;
+}
+
+.num_select {
+    display: flex;
+}
+
+.selector {
+    padding-left: 20rpx;
+    padding-top: 30rpx;
+}
+
+.bottom {
+    width: 750rpx;
+    height: 110rpx;
+    font-size: 32rpx;
+    padding-top: 55rpx;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+}
+
+.animation-reset {
+    width: 50%;
+    height: 100%;
+    line-height: 50%;
+    color: #fff;
+    text-align: center;
+    padding-top: 55rpx;
+    background-color: #F2AE3C;
+}
+
+.animation-button {
+    width: 50%;
+    height: 100%;
+    line-height: 50%;
+    color: #fff;
+    text-align: center;
+    background-color: #DF3F24;
+    padding-top: 55rpx;
+}
