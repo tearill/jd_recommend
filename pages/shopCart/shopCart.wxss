@@ -68,7 +68,7 @@ page {
 .goods_body {
     display: flex;
     flex-direction: column;
-    margin-left: 20rpx;
+    margin-left: 40rpx;
 }
 
 .title {
