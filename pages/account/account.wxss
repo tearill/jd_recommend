@@ -1,6 +1,10 @@
 /* miniprogram/pages/account/account.wxss */
 
 @import "../discount/discount.wxss";
+image {
+    border-radius: 2px;
+}
+
 .navagator {
     background-color: #F8F8F8;
 }
