@@ -1,0 +1,48 @@
+<!-- pages/afterMarket/afterMarket.wxml -->
+<view class="goodscard" wx:for="{{currData}}" wx:for-item="goods" wx:key="id">
+    <view class="body">
+        <!-- 商品图片 -->
+        <view class="body_hd">
+            <image class="avatar" src="{{goods.avatar}}"></image>
+        </view>
+        <view class="body_bd">
+            <view class="body_title">{{goods.title}}</view>
+            <view class="price_wrapper">
+                <view class="price">
+                    <view class="text">单价:</view>
+                    ¥{{goods.total_price}}
+                    <view class="text">购买数量:</view>
+                    {{goods.num}}
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="service_options">
+    <view class="option" bindtap="to_fix">
+        <image class="logo" src="../../assets/icons/fix_active.png"></image>
+        <view class="left_text">维修</view>
+        <view class="right_wrapper">
+            <view class="right_text">维修收到的商品</view>
+            <image class="all" src="../../assets/icons/detail.png"></image>
+        </view>
+    </view>
+    <view class="option">
+        <image class="logo" src="../../assets/icons/return.png"></image>
+        <view class="left_text over_time">退货</view>
+        <view class="right_wrapper">
+            <view class="right_text over_time">已超过规定的退货时间</view>
+            <!-- <view class="right_text">退货</view> -->
+            <image class="all" src="../../assets/icons/detail.png"></image>
+        </view>
+    </view>
+    <view class="option">
+        <image class="logo" src="../../assets/icons/change.png"></image>
+        <view class="left_text over_time">换货</view>
+        <view class="right_wrapper">
+            <view class="right_text over_time">已超过规定的换货时间</view>
+            <!-- <view class="right_text">换货</view> -->
+            <image class="all" src="../../assets/icons/detail.png"></image>
+        </view>
+    </view>
+</view>

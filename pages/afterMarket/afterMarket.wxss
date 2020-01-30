@@ -1,0 +1,78 @@
+/* pages/afterMarket/afterMarket.wxss */
+
+@import '../service/service.wxss';
+.goodscard {
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    padding-bottom: 30rpx;
+    color: #989A9B;
+    font-size: 25rpx;
+}
+
+.price_wrapper {
+    display: flex;
+    justify-content: start;
+    padding-top: 30rpx;
+}
+
+.price {
+    display: flex;
+    color: #000;
+    margin-left: -10rpx;
+}
+
+.text {
+    color: #989A9B;
+    font-size: 25rpx;
+}
+
+.service_options {
+    margin-left: 30rpx;
+    margin-right: 30rpx;
+    background-color: #fff;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+}
+
+.option {
+    background-color: #fff;
+    box-sizing: border-box;
+    width: 690rpx;
+    height: 160rpx;
+    padding-left: 30rpx;
+    border:  none;
+    border-top: 1px solid #F6F6F6;
+    border-bottom: 1px solid #F6F6F6;
+    display: flex;
+    align-items: center;
+    margin: 0 0 0 0;
+    position: relative;
+}
+
+.logo {
+    width: 70rpx;
+    height: 70rpx;
+    padding-right: 20rpx;
+}
+
+.all {
+    width: 18rpx;
+    height: 24rpx;
+    padding-top: 20rpx;
+    padding-left: 20rpx;
+}
+
+.left_text {
+    font-weight: bold;
+    font-size: 32rpx;
+}
+
+.right_wrapper {
+    display: flex;
+    position: absolute;
+    right: 30rpx;
+}
+
+.over_time {
+    color: #E8E8E8;
+}
