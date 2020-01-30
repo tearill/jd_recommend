@@ -5,6 +5,10 @@ page {
     background-color: #EFEFF4;
 }
 
+image {
+    border-radius: 2px;
+}
+
 .navigator {
     display: flex;
     border-top: 1px solid #EFEFF4;
