@@ -1,9 +1,5 @@
 {
-  "usingComponents": {
-    "van-button": "../../components/button/index"
-  },
+  "usingComponents": {},
   "navigationBarTitleText": "值得买优惠详情",
-  "navigationBarBackgroundColor": "#ffffff",
-  "navigationBarTextStyle": "black",
-  "enablePullDownRefresh": false
+  "navigationBarBackgroundColor": "#ffffff"
 }

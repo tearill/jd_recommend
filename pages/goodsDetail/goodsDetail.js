@@ -67,5 +67,10 @@ Page({
         console.log('分享成功')
       }
     }
+  },
+  to_jd() {
+    wx.navigateTo({
+      url: '../jd/jd?id=' + this.data.id
+    })
   }
 })

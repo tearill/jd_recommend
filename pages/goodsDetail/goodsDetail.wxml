@@ -14,6 +14,7 @@
         <view wx:if="{{item.emphasis != ''}}" class="media-box__emphasis">{{item.emphasis}}</view>
         <text class="media-box__detail">{{item.content}}</text>
     </view>
+    <!-- 底部评论板块 -->
     <view wx:if="{{item.comment != '0'}}" class="media-box-comment">
         <view class="comment_text">热门评论</view>
         <view class="comment" wx:for="{{comments}}" wx:for-item="comment" wx:key="comment">
@@ -36,6 +37,7 @@
     </view>
     <view wx:if="{{item.comment === '0'}}" class="no-comment"></view>
 </view>
+<!-- 前往京东按钮 -->
 <view class="media-box__btn">
-    <text class="head-to-jd">前往京东</text>
+    <text class="head-to-jd" bindtap="to_jd">前往京东</text>
 </view>
