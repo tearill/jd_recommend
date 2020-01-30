@@ -4,7 +4,7 @@
     "pages/service/service",
     "pages/account/account",
     "pages/explore/explore",
-    "pages/shop-chart/shop-chart",
+    "pages/shopCart/shopCart",
     "pages/user/user",
     "pages/goodsDetail/goodsDetail",
     "pages/commentDetail/commentDetail",
@@ -13,15 +13,23 @@
     "pages/login/login",
     "pages/appointment/appointment",
     "pages/discount/discount",
-    "pages/orderDetail/orderDetail"
+    "pages/orderDetail/orderDetail",
+    "pages/seller/seller",
+    "pages/afterMarket/afterMarket",
+    "pages/fix/fix",
+    "components/navigationBar/index",
+    "pages/jd/jd",
+    "components/toast/index",
+    "pages/buy/buy",
+    "components/myStepper/index"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "dark",
     "navigationBarBackgroundColor": "#DE554F",
     "navigationBarTitleText": "值得买京东优选",
-    "navigationBarTextStyle": "white",
-    "enablePullDownRefresh": true
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": false
   },
   "tabBar": {
     "selectedColor": "#000000",
@@ -42,7 +50,7 @@
       },
       {
         "text": "购物车",
-        "pagePath": "pages/shop-chart/shop-chart",
+        "pagePath": "pages/shopCart/shopCart",
         "iconPath": "assets/icons/shop-chart.png",
         "selectedIconPath": "assets/icons/shop-chart-active.png"
       },
