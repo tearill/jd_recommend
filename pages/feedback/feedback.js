@@ -5,7 +5,11 @@ Page({
     type: [],
     index: 0,
     content: '',
-    toastData: {}
+    toastData: {
+      icon: "alert",
+      info1: "请填写内容",
+      top: "620rpx"
+    }
   },
   onReady() {
     this.toast = this.selectComponent("#toast");
