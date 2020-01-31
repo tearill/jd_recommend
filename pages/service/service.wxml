@@ -36,7 +36,7 @@
     <view class="{{currData == '' ? 'contain' : 'content' }}" wx:for="{{navData}}" wx:for-index="id" wx:for-item="navItem" wx:key="id">
         <block wx:if="{{currentTab === id && currData != ''}}">
             <!-- 订单 -->
-            <view class="goodscard" wx:for="{{currData}}" wx:for-item="goods" wx:key="id">
+            <view class="goodscard" wx:for="{{currData}}" wx:for-item="goods" wx:key="index">
                 <!-- 店铺logo 店铺名 -->
                 <view class="head">
                     <image class="store_logo" wx:if="{{goods.store === '京东'}}" src="../../assets/icons/JD.png"></image>
@@ -64,7 +64,7 @@
                     </view>
                 </view>
                 <!-- 同一个订单/店铺的其他子订单 -->
-                <block wx:if="{{goods.child_order != ''}}" wx:for="{{goods.child_order}}" wx:for-item="child" wx:key="id">
+                <block wx:if="{{goods.child_order != ''}}" wx:for="{{goods.child_order}}" wx:for-item="child" wx:key="index">
                     <view class="body">
                         <view class="body_hd">
                             <image class="avatar" src="{{child.avatar}}"></image>

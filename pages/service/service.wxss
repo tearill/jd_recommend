@@ -2,7 +2,7 @@
 
 /* 导航栏 */
 
-@import "../discount/discount.wxss";
+@import "../../style/nav.wxss";
 /* 商品卡片 */
 
 @import "../account/account.wxss";
@@ -21,6 +21,7 @@ page {
 
 .wrap {
     width: 25%;
+    background-color: #fff;
     /* background-color: green; */
 }
 
@@ -129,7 +130,7 @@ input {
 
 .content {
     position: absolute;
-    top: 242rpx;
+    top: 250rpx;
     height: 100%;
     background-color: #fff;
 }

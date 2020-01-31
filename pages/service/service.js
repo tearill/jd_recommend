@@ -51,17 +51,41 @@ Page({
     })
     this.fillData(cur)
   },
+  searchText(str) {
+    let currData = []
+    this.data.currData.forEach(val => {
+      if (val.title.toLowerCase().indexOf(str.toLowerCase()) >= 0) {
+        currData.push(val)
+      }
+      // if(val.child_order != '') {
+      //   val.child_order.forEach(item => {
+      //     if(item.title.indexOf(str) >= 0) {
+      //       currData.push(val)
+      //     }
+      //   })
+      // }
+    });
+    this.setData({
+      currData
+    })
+  },
   gainContent(e) { // 获取输入框内容
     const text = e.detail.value;
+    console.log(typeof text)
     this.setData({
       inputValue: text
     })
+    this.searchText(text)
+    if (text === '') {
+      this.fillData(this.data.currentTab)
+    }
     console.log(typeof text, 'typeOf text');
   },
   deleteContent() { // 删除输入框内容
     this.setData({
       inputValue: ''
     })
+    this.fillData(this.data.currentTab)
   },
   showCancel() { // 显示取消
     this.setData({
@@ -73,6 +97,7 @@ Page({
       cancelShowed: false,
       inputValue: ''
     })
+    this.fillData(this.data.currentTab)
   },
   goTop(e) { // 回到顶部
     this.setData({
@@ -117,23 +142,19 @@ Page({
     })
   },
   fillData(index) { // 设置数据，填坑
+    let currData = []
     if (index === 0) {
-      this.setData({
-        currData: this.data.apply_order
-      })
+      currData = this.data.apply_order
     } else if (index === 1) {
-      this.setData({
-        currData: this.data.deal_order
-      })
+      currData = this.data.deal_order
     } else if (index === 2) {
-      this.setData({
-        currData: this.data.comment_order
-      })
+      currData = this.data.comment_order
     } else if (index === 3) {
-      this.setData({
-        currData: this.data.apply_record
-      })
+      currData = this.data.apply_record
     }
+    this.setData({
+      currData
+    })
   },
   showSelect() { // 显示选择菜单
     this.setData({
@@ -153,7 +174,7 @@ Page({
       isRuleTrue: false,
       selected: true
     })
-    if(this.data.currentOption === 0) { // 如果在选择了全部按钮的时候关闭菜单，不显示选中时的筛选
+    if (this.data.currentOption === 0) { // 如果在选择了全部按钮的时候关闭菜单，不显示选中时的筛选
       this.setData({
         selected: false
       })
@@ -173,7 +194,7 @@ Page({
     let id = e.currentTarget.dataset.id // 申请售后的商品的id
     console.log(service)
     console.log(id)
-    if(service) {
+    if (service) {
       wx.navigateTo({
         url: '../afterMarket/afterMarket?id=' + id
       })
