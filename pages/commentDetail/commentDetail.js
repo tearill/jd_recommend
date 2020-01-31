@@ -10,7 +10,7 @@ Page({
       .then(res => {
         console.log(res.data.comments)
         let comments = []
-        res.data.comments.map(val => { // 取出当前商品对应的评论
+        res.data.comments.forEach(val => { // 取出当前商品对应的评论
           if (val.goods === title) {
             comments.push(val)
           }

@@ -24,7 +24,7 @@ Page({
   },
   dealData() { // 处理数据
     let currData = []
-    this.data.orders.map(val => {
+    this.data.orders.forEach(val => {
       if (val.id == this.data.id) {
         currData.push(val)
       }

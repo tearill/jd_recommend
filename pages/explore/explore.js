@@ -35,8 +35,6 @@ Page({
                     navData
                 })
             })
-
-
     },
     onPullDownRefresh() {
         console.log('onPullDownRefresh');
@@ -50,32 +48,23 @@ Page({
         console.log('触底了')
     },
     switchNav(e) {
-        const cur = e.currentTarget.dataset.current;
-        console.log(cur.toString());
-        this.setData({
-            currentTab: cur,
-            category: cur,
-            isEmpty: false
-        });
-        console.log(this.data.category);
-        if (cur.toString() === '0') {
-            this.setData({
-                currData: this.data.goods
-            })
+        const cur = e.currentTarget.dataset.current; // Number
+        let currData = []
+        // console.log(cur.toString());
+        if (cur === 0) {
+            currData = this.data.goods
         } else {
-            console.log(this.data.category, 'data中的category');
-            var num = this.data.category; // 标记当前分类
-            console.log(typeof num, 'num类型');
-            let currData = []
-            this.data.goods.map(val => {
-                if (val.category === num.toString()) {
+            this.data.goods.forEach(val => {
+                if (val.category === cur.toString()) {
                     currData.push(val)
                 }
             })
-            this.setData({
-                currData
-            })
         }
+        this.setData({
+            currentTab: cur,
+            category: cur,
+            currData
+        });
     },
     showDetail(e) {
         const id = e.currentTarget.dataset.id;

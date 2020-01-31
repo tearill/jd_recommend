@@ -92,23 +92,19 @@ Page({
     let pay_data = this.data.pay_data
     let receive_data = this.data.receive_data
     let done_data = this.data.done_data
+    let currData = []
     if (index === 0) {
-      this.setData({
-        currData: orders
-      })
+      currData = orders
     } else if (index === 1) {
-      this.setData({
-        currData: pay_data
-      })
+      currData = pay_data
     } else if (index === 2) {
-      this.setData({
-        currData: receive_data
-      })
+      currData = receive_data
     } else if (index === 3) {
-      this.setData({
-        currData: done_data
-      })
+      currData = done_data
     }
+    this.setData({
+      currData
+    })
     console.log(this.data.currData, 'currData')
   },
   goTop(e) { // 回到顶部

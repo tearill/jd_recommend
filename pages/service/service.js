@@ -106,22 +106,20 @@ Page({
   },
   scroll(e) { // 滚动事件
     // 容器滚动时将此时的滚动距离赋值给 this.data.scrollTop
+    let floorstatus = false
     if (e.detail.scrollTop > 100) {
-      this.setData({
-        floorstatus: true
-      });
-    } else {
-      this.setData({
-        floorstatus: false
-      });
+        floorstatus = true
     }
+    this.setData({
+      floorstatus
+    })
   },
   dealData() { // 处理分类数据
     let apply_order = []
     let deal_order = []
     let comment_order = []
     let apply_record = []
-    this.data.orders.map(val => {
+    this.data.orders.forEach(val => {
       if (val.pay === true && val.receive === true) { // 可以申请售后的订单
         apply_order.push(val)
       }

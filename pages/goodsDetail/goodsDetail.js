@@ -17,7 +17,7 @@ Page({
       .then(res => {
         let cur = [];
         let comment = [];
-        res.data.goods.map(val => { // 当前商品
+        res.data.goods.forEach(val => { // 当前商品
           if (val._id === options.id) {
             cur.push(val)
           }
@@ -25,7 +25,7 @@ Page({
         console.log(cur, 'cur')
         // 处理商品详情描述
         cur[0].content = cur[0].content.replace(/(。)/g, '。\n\n').replace(/(~)/g, '~\n\n');
-        res.data.comments.map(val => {
+        res.data.comments.forEach(val => {
           if (val.goods === cur[0].title) {
             comment.push(val)
           }

@@ -39,7 +39,7 @@ Page({
         console.log(this.data.discount);
         let usableData = []; // 可用优惠券数据
         let uselessData = []; // 不可用优惠券数量
-        this.data.discount.map(val => { // 优惠券数据分类
+        this.data.discount.forEach(val => { // 优惠券数据分类
           if (val.usable === true) {
             usableData.push(val)
           } else {
@@ -59,23 +59,23 @@ Page({
         //     empty_usable: true
         //   })
         // }
-    });
+      });
   },
   switchNav(e) {
     const cur = e.currentTarget.dataset.current;
+    let currData = []
     console.log(cur, 'currentTab')
     this.setData({
       currentTab: cur
     });
     if (cur === 0) { // 设置可用优惠券
-      this.setData({
-        currData: this.data.usableData
-      })
+      currData = this.data.usableData
     } else { // 设置不可用优惠券
-      this.setData({
-        currData: this.data.uselessData
-      })
+      currData = this.data.uselessData
     }
+    this.setData({
+      currData
+    })
   },
   toUse() {
     wx.switchTab({

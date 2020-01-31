@@ -21,6 +21,7 @@ Page({
     this.onLoad() // 从登录界面回来的时候要刷新一下
     let cartgoods = wx.getStorageSync('cart') || [];
     let count = 0
+    let selectAll = false
     if (cartgoods.length === 0) {
       this.setData({
         cartgoods,
@@ -34,18 +35,13 @@ Page({
       }
     }
     if (count === cartgoods.length) {
-      this.setData({
-        selectAll: true
-      })
-    } else {
-      this.setData({
-        selectAll: false
-      })
+        selectAll = true
     }
     this.setData({
       cartgoods,
       hasCart: true,
-      count
+      count,
+      selectAll
     })
     this.getTotalPrice()
     this.get_total_num()
@@ -80,9 +76,7 @@ Page({
     let cartgoods = this.data.cartgoods
     let count = 0 // 计算当前选中的商品数
     cartgoods[index].select = !cartgoods[index].select
-    this.setData({
-      cartgoods
-    })
+    
     wx.setStorage({
       key: 'cart',
       data: cartgoods
@@ -95,33 +89,26 @@ Page({
       }
     }
     this.setData({
-      count
+      count,
+      cartgoods
     })
-    if (count === cartgoods.length) {
-      this.select_all()
-    } else {
-      this.setData({
-        selectAll: false
-      })
-    }
+    this.is_select_all()
   },
   is_select_all() { // 判断是否全部选中
     let cartgoods = this.data.cartgoods
     let count = 0
+    let selectAll = false
     for (let item of cartgoods) {
       if (item.select === true) {
         count++
       }
     }
     if (count === cartgoods.length) {
-      this.setData({
-        selectAll: true
-      })
-    } else {
-      this.setData({
-        selectAll: false
-      })
+        selectAll = true
     }
+    this.setData({
+      selectAll
+    })
   },
   select_all() { // 全选商品
     let selectAll = this.data.selectAll

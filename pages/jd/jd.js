@@ -51,24 +51,18 @@ Page({
           id
         })
         this.dealData()
-        this.setData({
-          imgList: this.data.currData[0].images
-        })
         let split = this.data.currData[0].plain_price.split('.')
-        this.setData({
-          price_before_dot: split[0],
-          price_after_dot: split[1]
-        })
         console.log(split)
+        let self_sell = false
         if (this.data.currData[0].store.indexOf("京东") >= 0 || this.data.currData[0].store.indexOf("自营") >= 0) {
-          this.setData({
-            self_sell: true
-          })
-        } else {
-          this.setData({
-            self_sell: false
-          })
+          self_sell = true
         }
+        this.setData({
+          imgList: this.data.currData[0].images,
+          price_before_dot: split[0],
+          price_after_dot: split[1],
+          self_sell
+        })
         console.log(this.data.self_sell)
         console.log(this.data.imgList)
       })
@@ -78,7 +72,7 @@ Page({
   },
   dealData() { // 处理数据 --- 找出对应id的商品
     let currData = []
-    this.data.goods.map(val => {
+    this.data.goods.forEach(val => {
       if (val._id === this.data.id) {
         currData.push(val)
         console.log(val.store)
@@ -109,15 +103,13 @@ Page({
   },
   scroll(e) { // 滚动事件
     // 容器滚动时将此时的滚动距离赋值给 this.data.scrollTop
+    let floorstatus = false
     if (e.detail.scrollTop > 300) {
-      this.setData({
-        floorstatus: true
-      });
-    } else {
-      this.setData({
-        floorstatus: false
-      });
+        floorstatus = true
     }
+    this.setData({
+      floorstatus
+    })
   },
   to_seller() { // 跳转在线客服
     wx.navigateTo({
@@ -218,17 +210,14 @@ Page({
   },
   onChange(e) { // 数量选择器改变事件
     let num = e.detail
+    let minShow = false
     console.log(num)
     if (num === 1) {
-      this.setData({
-        minShow: true,
-        num
-      })
-      return
+        minShow = true
     }
     this.setData({
       num,
-      minShow: false
+      minShow
     })
   },
   minus(e) { // 点击减少

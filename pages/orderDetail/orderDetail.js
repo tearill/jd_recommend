@@ -15,7 +15,7 @@ Page({
           orders: res.data.orderData
         })
         this.dealData()
-        this.data.orders.map(val => {
+        this.data.orders.forEach(val => {
           if (val.id === id) {
             currData.push(val)
           }
