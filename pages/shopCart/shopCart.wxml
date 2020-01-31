@@ -10,16 +10,16 @@
 <!-- 商品 -->
 <view class="cart_lists">
     <block wx:if="{{hasCart}}" wx:for="{{cartgoods}}" wx:for-item="goods" wx:key="id">
-        <view class="goodscard" bindtap="goDetail" data-index="{{index}}">
+        <view class="goodscard">
             <!-- 商品前面的勾选图标 -->
             <icon type="success" size="20" color="{{goods.select ? '#DE554F': '#aaa'}}" size="16" catchtap="select" data-index="{{index}}" />
             <view class="goods_wrapper">
-                <view class="avatar">
+                <view class="avatar" bindtap="goDetail" data-index="{{index}}">
                     <image class="avatar" src="{{goods.img}}"></image>
                 </view>
                 <!-- 标题 重量 类型 价格 -->
                 <view class="goods_body">
-                    <view class="title_wrapper">
+                    <view class="title_wrapper" bindtap="goDetail" data-index="{{index}}">
                         <view class="title">{{goods.title}}</view>
                         <!-- catchtap阻止父元素触发点击事件 -->
                         <image class="delete" src="../../assets/icons/delete_goods.png" catchtap="delete_goods" data-index="{{index}}"></image>
@@ -30,7 +30,6 @@
                     </view>
                     <view class="price">{{goods.price}}</view>
                     <van-stepper class="selector" value="{{goods.num}}" integer data-index="{{index}}" catch:change="change_num" />
-                    
                 </view>
             </view>
         </view>
