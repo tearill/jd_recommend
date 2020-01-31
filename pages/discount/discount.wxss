@@ -1,6 +1,6 @@
 /* @import "../appointment/appointment.wxss"; */
 
-@import "../explore/explore.wxss";
+@import "../../style/nav.wxss";
 page {
     background-color: #EFEFF4;
 }
@@ -26,8 +26,8 @@ image {
 }
 
 .content {
-    /* margin-left: 10rpx; */
-    /* margin-right: 10rpx; */
+    position: absolute;
+    top: 108rpx;
     margin-top: 10rpx;
 }
 
