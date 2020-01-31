@@ -9,13 +9,13 @@ Page({
       showCapsule: 1, //是否显示左上角图标   1表示显示    0表示不显示
       title: '商品详情', //导航栏 中间的标题
     },
+    // 此页面 页面内容距最顶部的距离
+    height: app.globalData.height * 2 + 20,
     toastData: { // toast需要的参数
       icon: "success",
       info1: "加入购物车成功",
       top: "50%"
     },
-    // 此页面 页面内容距最顶部的距离
-    height: app.globalData.height * 2 + 20,
     id: 0, // 商品id --> 查找商品
     goods: [], // 所有商品信息
     currData: [], // 当前商品信息
@@ -105,7 +105,7 @@ Page({
     // 容器滚动时将此时的滚动距离赋值给 this.data.scrollTop
     let floorstatus = false
     if (e.detail.scrollTop > 300) {
-        floorstatus = true
+      floorstatus = true
     }
     this.setData({
       floorstatus
@@ -213,7 +213,7 @@ Page({
     let minShow = false
     console.log(num)
     if (num === 1) {
-        minShow = true
+      minShow = true
     }
     this.setData({
       num,
