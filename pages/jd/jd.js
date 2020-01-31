@@ -9,6 +9,11 @@ Page({
       showCapsule: 1, //是否显示左上角图标   1表示显示    0表示不显示
       title: '商品详情', //导航栏 中间的标题
     },
+    toastData: { // toast需要的参数
+      icon: "success",
+      info1: "加入购物车成功",
+      top: "50%"
+    },
     // 此页面 页面内容距最顶部的距离
     height: app.globalData.height * 2 + 20,
     id: 0, // 商品id --> 查找商品
@@ -24,7 +29,7 @@ Page({
     showModalStatus: false,
     choose_value: '版本一',
     currentOption: 0, // 默认选中版本
-    num: 0, // 商品数量
+    num: 1, // 商品数量
     minShow: false, // 是否显示(最少一件)
     scrollTop: 0, // 控制顶部滑动距离
     floorstatus: false, // 是否显示回到顶部
@@ -55,9 +60,9 @@ Page({
           price_after_dot: split[1]
         })
         console.log(split)
-        if (this.data.currData[0].store.indexOf("京东") != -1) {
+        if (this.data.currData[0].store.indexOf("京东") >= 0 || this.data.currData[0].store.indexOf("自营") >= 0) {
           this.setData({
-            self_sell: false
+            self_sell: true
           })
         } else {
           this.setData({
@@ -142,6 +147,10 @@ Page({
     this.toast.showToast()
     this.toast.hideToast()
   },
+  onUnLoad() {
+    clearTimeOut(this.data.timer1)
+    clearTimeOut(this.data.timer2)
+  },
   onShareAppMessage() { // 分享事件
     return {
       title: this.data.currData[0].title,
@@ -165,12 +174,15 @@ Page({
       animationData: animation.export(),
       showModalStatus: true
     })
-    setTimeout(function () {
+    var timer1 = setTimeout(function () {
       animation.translateY(0).step()
       this.setData({
         animationData: animation.export()
       })
     }.bind(this), 200)
+    this.setData({
+      timer1
+    })
   },
   hideModal() { // 隐藏上拉菜单
     // 隐藏遮罩层
@@ -184,13 +196,16 @@ Page({
     this.setData({
       animationData: animation.export(),
     })
-    setTimeout(function () {
+    var timer2 = setTimeout(function () {
       animation.translateY(0).step()
       this.setData({
         animationData: animation.export(),
         showModalStatus: false
       })
     }.bind(this), 200)
+    this.setData({
+      timer2
+    })
   },
   select(e) { // 切换选择的类型
     let cur = e.currentTarget.dataset.id
@@ -206,7 +221,8 @@ Page({
     console.log(num)
     if (num === 1) {
       this.setData({
-        minShow: true
+        minShow: true,
+        num
       })
       return
     }
@@ -230,13 +246,13 @@ Page({
         num: 1
       })
     }
-    this.setData({
-      toastData: { // toast需要的参数
-        icon: "success",
-        info1: "加入购物车成功",
-        top: "50%"
-      }
-    })
+    // this.setData({
+    //   toastData: { // toast需要的参数
+    //     icon: "success",
+    //     info1: "加入购物车成功",
+    //     top: "50%"
+    //   }
+    // })
     this.toast.showToast()
     this.toast.hideToast()
     this.hideModal()
@@ -263,11 +279,19 @@ Page({
       }
       cartData.push(data)
     }
+    // 刷新购物车图标上的数量
+    let allNum = 0
+    cartData.forEach(val => {
+      allNum += val.num
+    });
+    console.log(allNum, 'num')
+    this.setData({
+      allNum
+    })
     wx.setStorage({
       key: 'cart',
       data: cartData
     })
-    this.change_num() // 刷新购物车图标上的数量
   },
   buy() {
     wx.navigateTo({

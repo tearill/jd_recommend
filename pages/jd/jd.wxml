@@ -28,7 +28,7 @@
         </view>
         <!-- 标题 -->
         <view class="title_bd">
-            <view class="self_sell" wx:if="{{!self_sell}}">自营</view>
+            <view class="self_sell" wx:if="{{self_sell}}">自营</view>
             <text class="title">{{goods.title}}</text>
         </view>
     </view>
@@ -156,7 +156,7 @@
     </view>
     <view class="num_select">
         <view class="num_text">数量</view>
-        <van-stepper class="selector" value="{{ 1 }}" integer bind:change="onChange" bind:minus="minus"/>
+        <van-stepper class="selector" value="{{ num }}" integer bind:change="onChange" bind:minus="minus"/>
         <view class="minimum" wx:if="{{minShow}}">(最少一件)</view>
     </view>
     <view class='bottom'>
