@@ -235,13 +235,13 @@ Page({
         num: 1
       })
     }
-    // this.setData({
-    //   toastData: { // toast需要的参数
-    //     icon: "success",
-    //     info1: "加入购物车成功",
-    //     top: "50%"
-    //   }
-    // })
+    this.setData({
+      toastData: { // toast需要的参数
+        icon: "success",
+        info1: "加入购物车成功",
+        top: "50%"
+      }
+    })
     this.toast.showToast()
     this.toast.hideToast()
     this.hideModal()
