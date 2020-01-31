@@ -1,0 +1,88 @@
+.contains{
+    margin-top: 0rpx;
+    width: 750rpx;
+    height: 305rpx;
+    display: flex;
+    flex-direction: row; /* 排列方式 */
+    background-color: #fff;
+  }
+  .contain{
+    /* border-bottom: 16rpx solid #EEEEEE; */
+    width: 750rpx;
+    height: 305rpx;
+    display: flex;
+    flex-direction: row; /* 排列方式 */
+    margin-top: 14rpx;
+    background-color: #fff;
+    /* background-color: blue; */
+  }
+  .media-box__hd {
+    /* justify-content:flex-start; */
+    margin: 22rpx 22rpx 22rpx 22rpx;
+    width: 262rpx;
+    height: 262rpx;
+  }
+  .media-box__thumb {
+    width: 100%;
+    height: 100%;
+  }
+  .media-box__bd {
+    /* background-color: green; */
+    /* margin-left: 10rpx; */
+    width: 451rpx;
+    height: 305rpx;
+    padding-left: 10rpx;
+    box-sizing: border-box;
+  }
+  .media-box__title {
+    /* margin-top: 5rpx; */
+    font-size: 30rpx;
+    width: 100%;
+    min-height: 80rpx;
+    /* max-height: 80rpx; */
+    padding-top: 35rpx;
+    padding-right: 44rpx;
+    /* background-color: red; */
+    box-sizing: border-box;
+    /* 超出两行打点 */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+  } 
+  .media-box__price {
+    color: #DE554F;
+    font-size: 30rpx;
+    width: 100%;
+    height: 70rpx;
+    padding-top: 60rpx;
+    /* background-color: green; */
+    box-sizing: border-box;
+  }
+  .media-box__sc{
+    color: #D5D5D5;
+    font-size: 26rpx;
+    display: flex;
+    width: 100%;
+    height: 155rpx;
+    padding-top: 50rpx;
+    /* background-color: yellow; */
+    box-sizing: border-box;
+  }
+  .media-box__time {
+    height: 24rpx;
+    width: 20%;
+  }
+  .comment_image, .value_image {
+    width: 25rpx;
+    height: 25rpx;
+  }
+  .media-box__des {
+    width: 80%;
+    height: 24rpx;
+    padding-right: 30rpx;
+    text-align: right;
+  }
+  .value_image {
+    margin-left: 30rpx;
+  }

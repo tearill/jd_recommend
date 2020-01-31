@@ -1,0 +1,99 @@
+.no-comment {
+    padding-bottom: 100rpx;
+}
+
+.media-box-comment {
+    margin-bottom: 50px;
+    padding-right: 0;
+    padding-top: 50rpx;
+    padding-bottom: 4rpx;
+    border-top: 4px solid #EEEEEE;
+    text-align: center;
+    background-color: #fff;
+    width: 750rpx;
+    /* background-color: red; */
+}
+
+.comment_text {
+    font-weight: bold;
+}
+
+.comment {
+    padding-left: 30rpx;
+    padding-top: 40rpx;
+    width: 750rpx;
+    min-height: 150rpx;
+    /* display: flex; */
+    /* background-color: red; */
+    border-bottom: 1px solid #EEEEEE;
+    /* flex-wrap: wrap; */
+    /* flex-direction: row; */
+    /* flex: 1; */
+}
+
+.comment-avatar {
+    width: 80rpx;
+    height: 80rpx;
+    border-radius: 50%;
+    /* background-color: green; */
+    position: absolute;
+    left: 30rpx;
+}
+
+.comment-desc {
+    font-size: 28rpx;
+    color: #C8C8C8;
+    padding-top: 25rpx;
+    width: 750rpx;
+    /* padding-bottom: 30rpx; */
+    /* min-height: 196rpx; */
+    /* display: flex;
+    flex-wrap: wrap; */
+    /* background-color: blue; */
+    /* justify-content: flex-end; */
+    /* align-content: space-between; */
+    /* position: relative;
+    left: 105rpx; */
+    /* margin-left: 120rpx; */
+}
+
+.comment-name {
+    /* display: inline; */
+    position: absolute;
+    left: 130rpx;
+    /* background-color: red; */
+}
+
+.comment-flag {
+    color: #A4A4A4;
+    padding-left: 30rpx;
+    /* background-color: green; */
+}
+
+.comment-time {
+    text-align: right;
+    /* display: flex; */
+    /* justify-content: flex-end; */
+    /* background-color: greenyellow; */
+    position: absolute;
+    right: 30rpx;
+}
+
+.comment-content {
+    font-size: 32rpx;
+    color: black;
+    position: absolute;
+    left: 130rpx;
+    padding-bottom: 40rpx;
+    margin-top: 60rpx;
+    margin-right: 20rpx;
+}
+
+.all_comment {
+    font-size: 32rpx;
+    /* background-color: greenyellow; */
+    text-align: left;
+    padding-left: 30rpx;
+    padding-top: 35rpx;
+    padding-bottom: 30rpx;
+}
