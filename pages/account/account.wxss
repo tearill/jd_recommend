@@ -1,16 +1,19 @@
 /* miniprogram/pages/account/account.wxss */
 
 @import "../discount/discount.wxss";
+@import "../../style/orderCard.wxss";
 image {
     border-radius: 2px;
 }
 
-.navagator {
+.navigator {
     background-color: #F8F8F8;
 }
 
 .wrap {
     width: 25%;
+    background-color: #F8F8F8;
+    border-bottom: 1px solid #EFEFF4;
 }
 
 .nav-item {
@@ -23,92 +26,11 @@ image {
     color: #E1534C;
 }
 
-.goodsCard {
-    background-color: #fff;
-    margin-bottom: 20rpx;
+.content {
+    margin-top: 0;
 }
 
-.head {
-    display: flex;
-    height: 60rpx;
-    padding-left: 30rpx;
-    padding-right: 30rpx;
-    align-items: center;
-    font-size: 32rpx;
-    box-sizing: border-box;
-    border-bottom: 1px solid #F3F3F3;
-}
 
-.store_logo {
-    width: 30rpx;
-    height: 30rpx;
-}
-
-.store {
-    padding-left: 20rpx;
-}
-
-.status {
-    color: #E1534C;
-    position: absolute;
-    right: 30rpx;
-}
-
-.body {
-    display: flex;
-    box-sizing: border-box;
-    padding-left: 30rpx;
-    padding-right: 30rpx;
-    height: 190rpx;
-    border-bottom: 1px solid #F3F3F3;
-}
-
-.body_hd {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.avatar, .child_avatar {
-    width: 140rpx;
-    height: 140rpx;
-}
-
-.body_title {
-    font-size: 28rpx;
-    padding-top: 60rpx;
-    padding-left: 20rpx;
-    /* 超出两行打点 */
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
-    overflow: hidden;
-}
-
-.child {
-    display: static;
-}
-
-.foot {
-    height: 100rpx;
-    font-size: 32rpx;
-    display: flex;
-    align-items: center;
-    padding-left: 30rpx;
-    padding-right: 30rpx;
-    box-sizing: border-box;
-}
-
-.price {
-    color: #E0483F;
-    font-size: 25rpx;
-}
-
-.no_more {
-    color: #989A9B;
-    font-size: 32rpx;
-    padding-top: 20rpx;
-}
 
 .goTop {
     position: fixed;
