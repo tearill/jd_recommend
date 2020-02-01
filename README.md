@@ -7,7 +7,8 @@
 
 ## Start  
 ./api 下
-> npm i 
+> npm init -y
+> npm i
 > npm i json-server  
 > npm json-server --port=1314 db.json
 
