@@ -70,7 +70,8 @@
     <view class="choose_box" bindtap="showModel">
         <view class="l_text">已选</view>
         <view class="choose_wrapper">
-            <view class="choose_value">{{choose_value}}</view><text class="follow" wx:if="{{num != 0}}">{{num}}件</text>
+            <view class="choose_value">{{choose_value}}</view>
+            <text class="follow" wx:if="{{num != 0}}">{{num}}件</text>
         </view>
         <image class="more" src="../../assets/icons/more.png"></image>
     </view>
@@ -92,16 +93,26 @@
     </view>
     <!-- 一些提示选项 -->
     <view class="options">
-        <icon type="success" size="10" color="#DE554F"></icon>
-        <text>京东发货&售后</text>
-        <icon type="success" size="10" color="#DE554F"></icon>
-        <text>99元免基础配送费(20kg内)</text>
-        <icon type="success" size="10" color="#DE554F"></icon>
-        <text>自提</text>
-        <icon type="success" size="10" color="#DE554F"></icon>
-        <text>次日达</text>
-        <icon type="success" size="10" color="#DE554F"></icon>
-        <text>7天无理由退货(拆封后不支持)</text>
+        <view class="option_wrap">
+            <icon type="success" size="10" color="#DE554F"></icon>
+            <text>京东发货&售后</text>
+        </view>
+        <view class="option_wrap">
+            <icon type="success" size="10" color="#DE554F"></icon>
+            <text>99元免基础配送费(20kg内)</text>
+        </view>
+        <view class="option_wrap">
+            <icon type="success" size="10" color="#DE554F"></icon>
+            <text>自提</text>
+        </view>
+        <view class="option_wrap">
+            <icon type="success" size="10" color="#DE554F"></icon>
+            <text>次日达</text>
+        </view>
+        <view class="option_wrap">
+            <icon type="success" size="10" color="#DE554F"></icon>
+            <text>7天无理由退货(拆封后不支持)</text>
+        </view>
     </view>
     <!-- 此处省略店铺卡片和评论卡片 -->
     <!-- 商品详情 -->
@@ -122,8 +133,6 @@
         <image class="icon_goTop" src="../../assets/icons/back_to_top.png"></image>
     </view>
 </scroll-view>
-
-
 <!-- 弹出的选择商品类别的菜单 -->
 <view class="commodity_screen" bindtap="hideModal" wx:if="{{showModalStatus}}"></view>
 <!-- 弹出框 -->
@@ -156,7 +165,7 @@
     </view>
     <view class="num_select">
         <view class="num_text">数量</view>
-        <van-stepper class="selector" value="{{ num }}" integer bind:change="onChange" bind:minus="minus"/>
+        <van-stepper class="selector" value="{{ num }}" integer bind:change="onChange" bind:minus="minus" />
         <view class="minimum" wx:if="{{minShow}}">(最少一件)</view>
     </view>
     <view class='bottom'>
@@ -164,8 +173,6 @@
         <view class="animation-button" bindtap="buy">立即购买</view>
     </view>
 </view>
-
-
 <!-- 底部固定的栏目 -->
 <view class="goodsaction">
     <view class="contact_wrapper" bindtap="to_seller">

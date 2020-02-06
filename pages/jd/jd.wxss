@@ -272,6 +272,8 @@ page {
     line-height: 2;
     padding-bottom: 30rpx;
     border-bottom: 1px solid #ddd;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .options icon {
