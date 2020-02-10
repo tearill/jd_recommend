@@ -20,8 +20,7 @@
     "components/navigationBar/index",
     "pages/jd/jd",
     "components/toast/index",
-    "pages/buy/buy",
-    "components/myStepper/index"
+    "pages/buy/buy"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
