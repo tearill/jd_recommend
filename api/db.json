@@ -325,32 +325,27 @@
             {
                 "id": 0,
                 "name": "待付款",
-                "icon": "../../assets/icons/wait-to-pay.png",
-                "class": "icons"
+                "icon": "../../assets/icons/wait-to-pay.png"
             },
             {
                 "id": 1,
                 "name": "待收货",
-                "icon": "../../assets/icons/wait-to-receive.png",
-                "class": "icons"
+                "icon": "../../assets/icons/wait-to-receive.png"
             },
             {
                 "id": 2,
                 "name": "已完成",
-                "icon": "../../assets/icons/done.png",
-                "class": "icons"
+                "icon": "../../assets/icons/done.png"
             },
             {
                 "id": 3,
                 "name": "返修/售后",
-                "icon": "../../assets/icons/service.png",
-                "class": "icons sell-service"
+                "icon": "../../assets/icons/service.png"
             },
             {
                 "id": 4,
                 "name": "我的订单",
-                "icon": "../../assets/icons/myorders.png",
-                "class": "icons order"
+                "icon": "../../assets/icons/myorders.png"
             }
         ]
     },
