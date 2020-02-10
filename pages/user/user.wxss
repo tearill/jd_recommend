@@ -96,33 +96,20 @@ page {
 }
 
 .wrapper, .myorders {
-    /* width: 20%; */
+    flex: 1; /* 自适应 */
     margin-top: 35rpx;
     margin-bottom: 40rpx;
-    /* margin-right: 40rpx; */
-    /* box-sizing: border-box; */
-}
-
-.wrapper {
-    padding-left: 30rpx;
-    padding-right: 35rpx;
+    text-align: center;
 }
 
 .myorders {
-    padding-left: 30rpx;
     border-left: 1px solid #EEEEEE;
 }
 
 .icons{
     width: 60rpx;
     height: 60rpx;
-    padding-left: 10rpx;
 }
-
-.sell-service, .order {
-    padding-left: 24rpx;
-}
-
 
 .text {
     padding-top: 15rpx;

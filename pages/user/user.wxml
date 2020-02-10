@@ -19,7 +19,7 @@
 <view class="options">
     <block wx:for="{{options}}" wx:for-item="option" wx:key="option">
         <view class="{{option.id === 4 ? 'myorders' : 'wrapper'}}" bindtap="showOptions" data-index="{{option.id}}">
-            <image class="{{option.class}}" src="{{option.icon}}" />
+            <image class="icons" src="{{option.icon}}" />
             <view class="text">{{option.name}}</view>
         </view>
     </block>
