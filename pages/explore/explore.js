@@ -63,7 +63,8 @@ Page({
         this.setData({
             currentTab: cur,
             category: cur,
-            currData
+            currData,
+            navScrollLeft: (cur - 1) * 75
         });
     },
     showDetail(e) {
